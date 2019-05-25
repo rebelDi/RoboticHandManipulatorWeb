@@ -1,0 +1,229 @@
+body {
+    background-image: url("../images/mainBackground.jpg");
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+}
+
+html{
+    height: 100%;
+    margin: 0;
+}
+
+.helpImage{
+    max-height: 40px;
+    max-width: 40px;
+    background-size: cover;
+}
+
+.headerForm {
+    font-size: xx-large;
+}
+.welcomeHeader {
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: xx-large;
+}
+.singUpLink {
+    text-align: center;
+}
+.form {
+    width: 500pt;
+    text-align: center;
+    border: medium black;
+    background-color: #ecfcf5;
+}
+input[type=text]:focus {
+    background-color: lightblue;
+}
+input[type=password]:focus {
+    background-color: lightblue;
+}
+.link {
+    background: none;
+    color: blue;
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.tableActions {
+    /*width: 500pt;*/
+    text-align: center;
+    background-color: #ecfcf5;
+}
+hr{
+    color: black;
+}
+
+.responseConnection{
+    border: 1px groove #111111;
+    max-width: 100px;
+    color: #111111;
+}
+
+.headerControlPanel {
+    background-color: #ecfcf5;
+    border: 3px black;
+    border-bottom-style: groove;
+}
+.ulBar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.ilBar{
+    float: left;
+}
+
+.ilButton{
+    outline: 2px solid white;
+    border: 1px #111111;
+    display: block;
+    background-color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: white;
+}
+
+.buttonLaunch {
+    font-size: medium;
+}
+
+.ilButton:hover{
+    background-color: #111;
+}
+
+.ulBar .submenu {
+    display: none;
+    position: absolute;
+    top: 43px;
+    left: 170px;
+    z-index: 10;
+    width: 150px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ulBar > li:hover .submenu {
+    display: block;
+}
+
+.adminButton {
+    width: 75px;
+}
+
+.active{
+    background-color: #4CAF50;
+}
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+.servoInput {
+    width:15px;
+    text-align: center;
+}
+
+.coordsInput{
+    width:30px;
+    text-align: center;
+}
+
+td{
+    text-align: center;
+    margin: auto;
+    width: auto;
+    alignment: center;
+}
+
+td .ilButton{
+    float:none!important;
+    display:inline;
+}
+
+.servoDirection {
+    text-align: center;
+    width: 75px;
+    height: 45px;
+    border: 1px groove black;
+    background-color: beige;
+}
+
+.submitImitatorChange {
+    background-color: lightgrey;
+    color: black;
+    border: 1px groove black;
+    text-align: center;
+}
+
+.warningMessage {
+    background-color: lemonchiffon;
+    font-size: large;
+    color: #111111;
+    margin: 50px;
+}
+
+.error {
+    color: red;
+    font-size: medium;
+}
