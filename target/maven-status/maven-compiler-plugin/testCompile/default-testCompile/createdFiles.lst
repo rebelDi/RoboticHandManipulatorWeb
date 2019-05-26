@@ -1,0 +1,9 @@
+roboticHand\Controllers\UserControllerTest.class
+roboticHand\Controllers\AdminControllerTest.class
+roboticHand\Controllers\ArduinoControllerTest.class
+roboticHand\Controllers\ActionControllerTest.class
+roboticHand\ApplicationTest.class
+roboticHand\Controllers\QuestionControllerTest.class
+roboticHand\Tools\EncryptorTest.class
+roboticHand\Controllers\ErrorTest.class
+roboticHand\Controllers\RedirectsTest.class

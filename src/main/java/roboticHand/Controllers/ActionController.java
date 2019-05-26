@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 /*
 Class for actions of imitator management
  */
-
 @Controller
 @RequestMapping("/action")
 public class ActionController {
@@ -57,6 +56,8 @@ public class ActionController {
      */
     @RequestMapping(value = "/sendData", method = RequestMethod.POST)
     public void sendData(@RequestParam String queryData, HttpServletRequest request){
+        actionRepository.getAllActions(request);
+
         JsonObject jsonObject = new Gson().fromJson(queryData, JsonObject.class);
 
         //Get all action names and values as string array
