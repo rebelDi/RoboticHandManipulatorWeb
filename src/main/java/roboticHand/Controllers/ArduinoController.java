@@ -103,11 +103,11 @@ public class ArduinoController {
                 }
             }
 
-            //These actions hava a weird range, so the value is corrected manually
+            //These actions have a weird range, so the value is corrected manually
             if(rightInfoAction.getActionLeap().equals("Middle finger") ||
                     rightInfoAction.getActionLeap().equals("Index finger") ||
                     rightInfoAction.getActionLeap().equals("Thumb")){
-                System.out.println("hi " + value);
+//                System.out.println("hi " + value);
                 value += 150;
                 //150 180
             }

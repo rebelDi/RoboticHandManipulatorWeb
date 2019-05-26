@@ -86,8 +86,10 @@ public class UserServiceImpl implements UserRepository {
      */
     @Override
     public String edit(String oldLogin, User user) {
-        if(getUserInfo(user.getLogin()) != null){
-            return "Login is taken";
+        if(!oldLogin.equals(user.getLogin())) {
+            if (getUserInfo(user.getLogin()) != null) {
+                return "Login is taken";
+            }
         }else {
             //Opens session for operations on database
             Session session = openSession();

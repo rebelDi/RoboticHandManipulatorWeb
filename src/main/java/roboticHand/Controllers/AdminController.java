@@ -54,15 +54,17 @@ public class AdminController {
     This method gets the user and his new rights and tries to change them
      */
     @PostMapping(value = "/userRightsEdit")
-    public String changeUserRights(@RequestBody String[] user, HttpServletRequest request){
-        User user1 = new User();
-        user1.setLogin(user[0]);
-        user1.setRights(user[1].charAt(0));
+    public String changeUserRights(@RequestParam String user, HttpServletRequest request){
+        JsonObject jsonObject = new Gson().fromJson(user, JsonObject.class);
 
-        String rights = (String) request.getSession().getAttribute("rights");
+        User user1 = new User();
+        user1.setLogin(jsonObject.get("login").getAsString());
+        user1.setRights(jsonObject.get("rights").getAsString().charAt(0));
+
+        String rightsOfUser = (String) request.getSession().getAttribute("rights");
 
         //If user is not usual user, he can change rights
-        if(rights.equals("S") || rights.equals("A")) {
+        if(rightsOfUser.equals("S") || rightsOfUser.equals("A")) {
             userRepository.editRights(user1);
             return "adminUsers";
         }else{
@@ -90,8 +92,16 @@ public class AdminController {
     This method redirects the user to the page of editing imitator's actions
      */
     @GetMapping(value = "/actions")
-    public String changeActions(){
-        return "adminImitator";
+    public String changeActions(HttpServletRequest request){
+        String rights = (String) request.getSession().getAttribute("rights");
+
+        //Only superAdmin can do that
+        if(rights.equals("S") || rights.equals("A")) {
+            userRepository.getUsersInWaitingList(request);
+            return "adminImitator";
+        }else{
+            return "/";
+        }
     }
 
     /*
@@ -100,33 +110,40 @@ public class AdminController {
      */
     @RequestMapping(value = "/actionEdit", method = RequestMethod.POST)
     public String editAction(@RequestParam String actions, HttpServletRequest request){
-        ArrayList<Action> actionsToEdit = new ArrayList<>();
-        JsonObject jsonObject = new Gson().fromJson(actions, JsonObject.class);
+        String rights = (String) request.getSession().getAttribute("rights");
 
-        //Get actions name
-        JsonArray jsonActionsName = jsonObject.get("actionsName").getAsJsonArray();
-        JsonArray jsonServoNumbers= jsonObject.get("servosNum").getAsJsonArray();
-        JsonArray jsonLeapMin = jsonObject.get("leapsMin").getAsJsonArray();
-        JsonArray jsonLeapMax = jsonObject.get("leapsMax").getAsJsonArray();
-        JsonArray jsonServoDirections = jsonObject.get("servosD").getAsJsonArray();
-        JsonArray jsonServoMins = jsonObject.get("servosMin").getAsJsonArray();
-        JsonArray jsonServoMax = jsonObject.get("servosMax").getAsJsonArray();
-        JsonArray jsonAvailabilities = jsonObject.get("avails").getAsJsonArray();
+        //Only superAdmin can do that
+        if(rights.equals("S")) {
+            ArrayList<Action> actionsToEdit = new ArrayList<>();
+            JsonObject jsonObject = new Gson().fromJson(actions, JsonObject.class);
 
-        for(int i = 0; i < jsonActionsName.size(); i++){
-            Action action = new Action();
-            action.setActionLeap(jsonActionsName.get(i).getAsString());
-            action.setHandAction(Integer.parseInt(jsonServoNumbers.get(i).getAsString()));
-            action.setLeapMin(Integer.parseInt(jsonLeapMin.get(i).getAsString()));
-            action.setLeapMax(Integer.parseInt(jsonLeapMax.get(i).getAsString()));
-            action.setServoDirection(Integer.parseInt(jsonServoDirections.get(i).getAsString()));
-            action.setServoMin(Integer.parseInt(jsonServoMins.get(i).getAsString()));
-            action.setServoMax(Integer.parseInt(jsonServoMax.get(i).getAsString()));
-            action.setAvailability(Integer.parseInt(jsonAvailabilities.get(i).getAsString()));
-            actionsToEdit.add(action);
+            //Get actions name
+            JsonArray jsonActionsName = jsonObject.get("actionsName").getAsJsonArray();
+            JsonArray jsonServoNumbers= jsonObject.get("servosNum").getAsJsonArray();
+            JsonArray jsonLeapMin = jsonObject.get("leapsMin").getAsJsonArray();
+            JsonArray jsonLeapMax = jsonObject.get("leapsMax").getAsJsonArray();
+            JsonArray jsonServoDirections = jsonObject.get("servosD").getAsJsonArray();
+            JsonArray jsonServoMins = jsonObject.get("servosMin").getAsJsonArray();
+            JsonArray jsonServoMax = jsonObject.get("servosMax").getAsJsonArray();
+            JsonArray jsonAvailabilities = jsonObject.get("avails").getAsJsonArray();
+
+            for(int i = 0; i < jsonActionsName.size(); i++){
+                Action action = new Action();
+                action.setActionLeap(jsonActionsName.get(i).getAsString());
+                action.setHandAction(Integer.parseInt(jsonServoNumbers.get(i).getAsString()));
+                action.setLeapMin(Integer.parseInt(jsonLeapMin.get(i).getAsString()));
+                action.setLeapMax(Integer.parseInt(jsonLeapMax.get(i).getAsString()));
+                action.setServoDirection(Integer.parseInt(jsonServoDirections.get(i).getAsString()));
+                action.setServoMin(Integer.parseInt(jsonServoMins.get(i).getAsString()));
+                action.setServoMax(Integer.parseInt(jsonServoMax.get(i).getAsString()));
+                action.setAvailability(Integer.parseInt(jsonAvailabilities.get(i).getAsString()));
+                actionsToEdit.add(action);
+            }
+            actionRepository.edit(actionsToEdit);
+            actionRepository.getAllActions(request);
+            return "admin/actionEdit";
+        }else{
+            return "/";
         }
-        actionRepository.edit(actionsToEdit);
-        actionRepository.getAllActions(request);
-        return "admin/actionEdit";
     }
 }
