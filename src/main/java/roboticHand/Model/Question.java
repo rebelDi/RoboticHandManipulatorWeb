@@ -25,6 +25,16 @@ public class Question {
     //defines status of question
     private String status;
 
+    public Question() {
+    }
+
+    public Question(String user, String question, String answer, String status) {
+        this.user = user;
+        this.question = question;
+        this.answer = answer;
+        this.status = status;
+    }
+
     //Getter for the id of user
     public Integer getId() {
         return id;
