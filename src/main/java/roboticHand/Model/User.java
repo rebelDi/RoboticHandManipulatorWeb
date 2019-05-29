@@ -19,8 +19,8 @@ public class User {
     //defines login of user
     private String login;
     //defines user's password
-    private String password;
-    //defines name of user
+    private String password;    //defines name of user
+
     private String name;
     //defines surname of user
     private String surname;
@@ -33,6 +33,16 @@ public class User {
 
     //Every entity needs to have an empty controller
     public User() {
+    }
+
+    public User(String login, String password, String name, String surname, Character rights, String secretQuestion, String secretAnswer) {
+        this.login = login;
+        this.password = password;
+        this.name = name;
+        this.surname = surname;
+        this.rights = rights;
+        this.secretQuestion = secretQuestion;
+        this.secretAnswer = secretAnswer;
     }
 
     //Getter for the login of user
