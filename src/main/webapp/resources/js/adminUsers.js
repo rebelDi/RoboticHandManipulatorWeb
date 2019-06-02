@@ -14,7 +14,6 @@ function changeUserData(login, rights, i) {
         changeStyle("B"+i, "#333");
     }
 
-    // var user = [login, rights];
     $.ajax({
         type: "POST",
         url: "/admin/userRightsEdit",

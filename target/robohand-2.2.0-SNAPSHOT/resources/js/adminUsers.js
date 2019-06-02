@@ -14,13 +14,11 @@ function changeUserData(login, rights, i) {
         changeStyle("B"+i, "#333");
     }
 
-    var user = [login, rights];
     $.ajax({
         type: "POST",
-        contentType: "application/json",
         url: "/admin/userRightsEdit",
-        data: JSON.stringify(user),
-        cache: false,
+        data: {user : JSON.stringify({login : login, rights : rights})},
+        cache: false
     });
 }
 

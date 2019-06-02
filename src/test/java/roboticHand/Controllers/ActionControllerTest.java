@@ -29,7 +29,8 @@ public class ActionControllerTest {
     public void sendData() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
                 .post("/action/sendData")
-                .param("queryData", "{\"actions\": [\"Thumb\"], \"values\": [\"111\"]}"))
+                .param("queryData", "{\"actions\": [\"Thumb\"], \"values\": [\"111\"]}")
+                .param("ip", "no"))
                 .andDo(print())
                 .andExpect(status().isOk());
     }

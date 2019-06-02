@@ -1,0 +1,811 @@
+2019-06-02 17:15:46.335  INFO 12292 --- [main] r.Application                            : Starting Application v2.2.0-SNAPSHOT on DESKTOP-N5QHTFD with PID 12292 (I:\Diploma\Application\Spring\RoboHandApp\target\robohand-2.2.0-SNAPSHOT.war started by napal in I:\Diploma\Application\Spring\RoboHandApp\target)
+2019-06-02 17:15:46.343  INFO 12292 --- [main] r.Application                            : No active profile set, falling back to default profiles: default
+2019-06-02 17:15:47.977  INFO 12292 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2019-06-02 17:15:48.021  INFO 12292 --- [main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2019-06-02 17:15:48.023  INFO 12292 --- [main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-06-02 17:15:49.324  INFO 12292 --- [main] o.a.j.s.TldScanner                       : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-06-02 17:15:49.422  INFO 12292 --- [main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2019-06-02 17:15:49.424 DEBUG 12292 --- [main] o.s.w.c.ContextLoader                    : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-06-02 17:15:49.425  INFO 12292 --- [main] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 3023 ms
+2019-06-02 17:15:49.608 TRACE 12292 --- [main] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped [/**/favicon.ico] onto ResourceHttpRequestHandler [class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], ServletContext resource [/], class path resource []]
+2019-06-02 17:15:49.609 DEBUG 12292 --- [main] o.s.w.s.h.SimpleUrlHandlerMapping        : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-06-02 17:15:49.772  INFO 12292 --- [main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-02 17:15:49.781 DEBUG 12292 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-06-02 17:15:49.879 TRACE 12292 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	r.C.AdminController:
+	{GET /admin/users}: getAllUsers(HttpServletRequest)
+	{GET /admin/actions}: changeActions(HttpServletRequest)
+	{POST /admin/userRightsEdit}: changeUserRights(String,HttpServletRequest)
+	{POST /admin/actionEdit}: editAction(String,HttpServletRequest)
+	{GET /admin/waitingList}: showUsersInWaitingList(HttpServletRequest)
+2019-06-02 17:15:49.885 TRACE 12292 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	r.C.QuestionController:
+	{GET /question/}: questionRedirect(HttpServletRequest)
+	{POST /question/answer}: answerQuestion(String,String,String)
+	{POST /question/ask}: askQuestion(String,HttpServletRequest)
+2019-06-02 17:15:49.887 TRACE 12292 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	r.C.ActionController:
+	{POST /action/sendData}: sendData(String,String,HttpServletRequest)
+	{POST /action/checkConnection}: checkConnection(String)
+	{GET /action/panel}: controlPanelRedirect(HttpServletRequest)
+2019-06-02 17:15:49.891 TRACE 12292 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	r.C.Redirects:
+	{GET /}: index()
+	{GET /redirect}: redirect()
+2019-06-02 17:15:49.894 TRACE 12292 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	r.C.Error:
+	{GET /error/}: redirectError()
+2019-06-02 17:15:49.897 TRACE 12292 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	r.C.UserController:
+	{POST /user/login}: authorizeUser(String[],HttpServletRequest)
+	{POST /user/edit}: editUser(String[],HttpServletRequest)
+	{GET /user/logInRedirect}: logInRedirect()
+	{GET /user/signUpRedirect}: signUpRedirect()
+	{GET /user/userInfoRedirect}: userInfoRedirect(HttpServletRequest,Model)
+	{POST /user/signUp}: signUpUser(String[])
+2019-06-02 17:15:49.905 TRACE 12292 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ /error}: error(HttpServletRequest)
+	{ /error, produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2019-06-02 17:15:49.910 DEBUG 12292 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 22 mappings in 'requestMappingHandlerMapping'
+2019-06-02 17:15:49.917 TRACE 12292 --- [main] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped [/redirect] onto ParameterizableViewController []
+2019-06-02 17:15:49.919 DEBUG 12292 --- [main] o.s.w.s.h.SimpleUrlHandlerMapping        : Patterns [/redirect] in 'viewControllerHandlerMapping'
+2019-06-02 17:15:49.926 DEBUG 12292 --- [main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Detected 0 mappings in 'beanNameHandlerMapping'
+2019-06-02 17:15:49.933 TRACE 12292 --- [main] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped [/webjars/**] onto ResourceHttpRequestHandler ["classpath:/META-INF/resources/webjars/"]
+2019-06-02 17:15:49.934 TRACE 12292 --- [main] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped [/**] onto ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2019-06-02 17:15:49.936 TRACE 12292 --- [main] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped [/resources/**] onto ResourceHttpRequestHandler ["/resources/"]
+2019-06-02 17:15:49.936 DEBUG 12292 --- [main] o.s.w.s.h.SimpleUrlHandlerMapping        : Patterns [/webjars/**, /**, /resources/**] in 'resourceHandlerMapping'
+2019-06-02 17:15:49.956 DEBUG 12292 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-06-02 17:15:49.971  INFO 12292 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-06-02 17:15:50.154  INFO 12292 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-02 17:15:50.161  INFO 12292 --- [main] r.Application                            : Started Application in 4.405 seconds (JVM running for 5.407)
+2019-06-02 17:16:03.214  INFO 12292 --- [http-nio-8080-exec-10] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:03.215  INFO 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2019-06-02 17:16:03.216 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : Detected org.springframework.web.multipart.support.StandardServletMultipartResolver@45792847
+2019-06-02 17:16:03.218 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : No LocaleResolver 'localeResolver': using default [AcceptHeaderLocaleResolver]
+2019-06-02 17:16:03.219 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : No ThemeResolver 'themeResolver': using default [FixedThemeResolver]
+2019-06-02 17:16:03.221 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : No RequestToViewNameTranslator 'viewNameTranslator': using default [DefaultRequestToViewNameTranslator]
+2019-06-02 17:16:03.224 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : No FlashMapManager 'flashMapManager': using default [SessionFlashMapManager]
+2019-06-02 17:16:03.225 DEBUG 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-06-02 17:16:03.226  INFO 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : Completed initialization in 10 ms
+2019-06-02 17:16:03.247 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : GET "/", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:03.252 TRACE 12292 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String roboticHand.Controllers.Redirects.index()
+2019-06-02 17:16:03.261 TRACE 12292 --- [http-nio-8080-exec-10] .w.s.m.m.a.ServletInvocableHandlerMethod : Arguments: []
+2019-06-02 17:16:03.267 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : Rendering view [org.springframework.web.servlet.view.InternalResourceView: name 'index'; URL [/WEB-INF/pages/index.jsp]] 
+2019-06-02 17:16:03.268 DEBUG 12292 --- [http-nio-8080-exec-10] o.s.w.s.v.InternalResourceView           : View name 'index', model {}
+2019-06-02 17:16:03.270 DEBUG 12292 --- [http-nio-8080-exec-10] o.s.w.s.v.InternalResourceView           : Forwarding to [/WEB-INF/pages/index.jsp]
+2019-06-02 17:16:04.815  WARN 12292 --- [http-nio-8080-exec-10] o.a.c.u.SessionIdGeneratorBase           : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [181] milliseconds.
+2019-06-02 17:16:04.823 DEBUG 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : Completed 200 OK, headers={masked}
+2019-06-02 17:16:04.850 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.DispatcherServlet                : GET "/resources/js/jQuery.js", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:04.850 TRACE 12292 --- [http-nio-8080-exec-8] o.s.w.s.DispatcherServlet                : GET "/resources/css/style.css", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:04.857 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:04.857 TRACE 12292 --- [http-nio-8080-exec-8] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:04.861 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:04.862 TRACE 12292 --- [http-nio-8080-exec-8] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:04.878 TRACE 12292 --- [http-nio-8080-exec-8] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:04.903 DEBUG 12292 --- [http-nio-8080-exec-8] o.s.w.s.DispatcherServlet                : Completed 200 OK, headers={masked}
+2019-06-02 17:16:04.887 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:04.905 DEBUG 12292 --- [http-nio-8080-exec-9] o.s.w.s.DispatcherServlet                : Completed 200 OK, headers={masked}
+2019-06-02 17:16:04.906 TRACE 12292 --- [http-nio-8080-exec-8] o.s.w.s.DispatcherServlet                : GET "/resources/js/formsCheck.js", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:04.909 TRACE 12292 --- [http-nio-8080-exec-8] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:04.910 TRACE 12292 --- [http-nio-8080-exec-8] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:04.914 TRACE 12292 --- [http-nio-8080-exec-8] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:04.919 DEBUG 12292 --- [http-nio-8080-exec-8] o.s.w.s.DispatcherServlet                : Completed 200 OK, headers={masked}
+2019-06-02 17:16:04.923 TRACE 12292 --- [http-nio-8080-exec-7] o.s.w.s.DispatcherServlet                : GET "/resources/images/mainBackground.jpg", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:04.927 TRACE 12292 --- [http-nio-8080-exec-7] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:04.930 TRACE 12292 --- [http-nio-8080-exec-7] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:05.069 TRACE 12292 --- [http-nio-8080-exec-7] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:05.073 DEBUG 12292 --- [http-nio-8080-exec-7] o.s.w.s.DispatcherServlet                : Completed 200 OK, headers={masked}
+2019-06-02 17:16:05.097 TRACE 12292 --- [http-nio-8080-exec-6] o.s.w.s.DispatcherServlet                : GET "/favicon.ico", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:05.102 TRACE 12292 --- [http-nio-8080-exec-6] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler [class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], ServletContext resource [/], class path resource []]] and 1 interceptors
+2019-06-02 17:16:05.121 TRACE 12292 --- [http-nio-8080-exec-6] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:05.130 DEBUG 12292 --- [http-nio-8080-exec-6] o.s.w.s.DispatcherServlet                : Completed 200 OK, headers={masked}
+2019-06-02 17:16:05.553 TRACE 12292 --- [http-nio-8080-exec-5] o.s.w.s.DispatcherServlet                : POST "/user/login", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:05.554 TRACE 12292 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public org.springframework.http.ResponseEntity<?> roboticHand.Controllers.UserController.authorizeUser(java.lang.String[],javax.servlet.http.HttpServletRequest)
+2019-06-02 17:16:05.562 TRACE 12292 --- [http-nio-8080-exec-5] o.s.w.c.DefaultCorsProcessor             : Skip: request is from same origin
+2019-06-02 17:16:05.584 TRACE 12292 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [[Ljava.lang.String;@254844d7]
+2019-06-02 17:16:05.591 TRACE 12292 --- [http-nio-8080-exec-5] .w.s.m.m.a.ServletInvocableHandlerMethod : Arguments: [[Ljava.lang.String;@254844d7, org.apache.catalina.connector.RequestFacade@689758e]
+2019-06-02 17:16:05.684  INFO 12292 --- [http-nio-8080-exec-5] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2019-06-02 17:16:05.690  INFO 12292 --- [http-nio-8080-exec-5] o.h.Version                              : HHH000412: Hibernate Core {4.3.0.Final}
+2019-06-02 17:16:05.693  INFO 12292 --- [http-nio-8080-exec-5] o.h.c.Environment                        : HHH000206: hibernate.properties not found
+2019-06-02 17:16:05.694  INFO 12292 --- [http-nio-8080-exec-5] o.h.c.Environment                        : HHH000021: Bytecode provider name : javassist
+2019-06-02 17:16:05.736  INFO 12292 --- [http-nio-8080-exec-5] o.h.c.Configuration                      : HHH000043: Configuring from resource: /hibernate.cfg.xml
+2019-06-02 17:16:05.737  INFO 12292 --- [http-nio-8080-exec-5] o.h.c.Configuration                      : HHH000040: Configuration resource: /hibernate.cfg.xml
+2019-06-02 17:16:05.781  INFO 12292 --- [http-nio-8080-exec-5] o.h.c.Configuration                      : HHH000041: Configured SessionFactory: null
+2019-06-02 17:16:05.844  INFO 12292 --- [http-nio-8080-exec-5] .c.i.DriverManagerConnectionProviderImpl : HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2019-06-02 17:16:05.845  INFO 12292 --- [http-nio-8080-exec-5] .c.i.DriverManagerConnectionProviderImpl : HHH000401: using driver [null] at URL [jdbc:mysql://localhost:3306/robotichand]
+2019-06-02 17:16:05.846  INFO 12292 --- [http-nio-8080-exec-5] .c.i.DriverManagerConnectionProviderImpl : HHH000046: Connection properties: {password=****, user=root}
+2019-06-02 17:16:05.847  INFO 12292 --- [http-nio-8080-exec-5] .c.i.DriverManagerConnectionProviderImpl : HHH000006: Autocommit mode: false
+2019-06-02 17:16:05.848  INFO 12292 --- [http-nio-8080-exec-5] .c.i.DriverManagerConnectionProviderImpl : HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-06-02 17:16:06.293  INFO 12292 --- [http-nio-8080-exec-5] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-02 17:16:06.413  INFO 12292 --- [http-nio-8080-exec-5] o.h.e.t.i.TransactionFactoryInitiator    : HHH000399: Using default transaction strategy (direct JDBC transactions)
+2019-06-02 17:16:06.418  INFO 12292 --- [http-nio-8080-exec-5] o.h.h.i.a.ASTQueryTranslatorFactory      : HHH000397: Using ASTQueryTranslatorFactory
+2019-06-02 17:16:06.857 DEBUG 12292 --- [http-nio-8080-exec-5] o.h.SQL                                  : select user0_.login as col_0_0_ from User user0_ where user0_.login='' and user0_.password='eb34a3f0a617c91b009720af030f5995'
+2019-06-02 17:16:06.878 TRACE 12292 --- [http-nio-8080-exec-5] o.h.t.d.s.BasicExtractor                 : extracted value ([col_0_0_] : [VARCHAR]) - []
+2019-06-02 17:16:06.884  INFO 12292 --- [http-nio-8080-exec-5] o.h.c.Configuration                      : HHH000043: Configuring from resource: /hibernate.cfg.xml
+2019-06-02 17:16:06.885  INFO 12292 --- [http-nio-8080-exec-5] o.h.c.Configuration                      : HHH000040: Configuration resource: /hibernate.cfg.xml
+2019-06-02 17:16:06.890  INFO 12292 --- [http-nio-8080-exec-5] o.h.c.Configuration                      : HHH000041: Configured SessionFactory: null
+2019-06-02 17:16:06.895  INFO 12292 --- [http-nio-8080-exec-5] .c.i.DriverManagerConnectionProviderImpl : HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2019-06-02 17:16:06.896  INFO 12292 --- [http-nio-8080-exec-5] .c.i.DriverManagerConnectionProviderImpl : HHH000401: using driver [null] at URL [jdbc:mysql://localhost:3306/robotichand]
+2019-06-02 17:16:06.897  INFO 12292 --- [http-nio-8080-exec-5] .c.i.DriverManagerConnectionProviderImpl : HHH000046: Connection properties: {password=****, user=root}
+2019-06-02 17:16:06.897  INFO 12292 --- [http-nio-8080-exec-5] .c.i.DriverManagerConnectionProviderImpl : HHH000006: Autocommit mode: false
+2019-06-02 17:16:06.900  INFO 12292 --- [http-nio-8080-exec-5] .c.i.DriverManagerConnectionProviderImpl : HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-06-02 17:16:06.920  INFO 12292 --- [http-nio-8080-exec-5] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-02 17:16:06.936  INFO 12292 --- [http-nio-8080-exec-5] o.h.e.t.i.TransactionFactoryInitiator    : HHH000399: Using default transaction strategy (direct JDBC transactions)
+2019-06-02 17:16:06.938  INFO 12292 --- [http-nio-8080-exec-5] o.h.h.i.a.ASTQueryTranslatorFactory      : HHH000397: Using ASTQueryTranslatorFactory
+2019-06-02 17:16:06.973 DEBUG 12292 --- [http-nio-8080-exec-5] o.h.SQL                                  : select user0_.rights as col_0_0_ from User user0_ where user0_.login=''
+2019-06-02 17:16:06.977 TRACE 12292 --- [http-nio-8080-exec-5] o.h.t.d.s.BasicExtractor                 : extracted value ([col_0_0_] : [CHAR]) - [S]
+2019-06-02 17:16:06.985 DEBUG 12292 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2019-06-02 17:16:06.986 TRACE 12292 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [""]
+2019-06-02 17:16:06.988 TRACE 12292 --- [http-nio-8080-exec-5] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:06.989 DEBUG 12292 --- [http-nio-8080-exec-5] o.s.w.s.DispatcherServlet                : Completed 200 OK, headers={masked}
+2019-06-02 17:16:07.001 TRACE 12292 --- [http-nio-8080-exec-4] o.s.w.s.DispatcherServlet                : GET "/action/panel", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:07.003 TRACE 12292 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String roboticHand.Controllers.ActionController.controlPanelRedirect(javax.servlet.http.HttpServletRequest)
+2019-06-02 17:16:07.004 TRACE 12292 --- [http-nio-8080-exec-4] .w.s.m.m.a.ServletInvocableHandlerMethod : Arguments: [org.apache.catalina.connector.RequestFacade@689758e]
+2019-06-02 17:16:07.009  INFO 12292 --- [http-nio-8080-exec-4] o.h.c.Configuration                      : HHH000043: Configuring from resource: /hibernate.cfg.xml
+2019-06-02 17:16:07.010  INFO 12292 --- [http-nio-8080-exec-4] o.h.c.Configuration                      : HHH000040: Configuration resource: /hibernate.cfg.xml
+2019-06-02 17:16:07.015  INFO 12292 --- [http-nio-8080-exec-4] o.h.c.Configuration                      : HHH000041: Configured SessionFactory: null
+2019-06-02 17:16:07.019  INFO 12292 --- [http-nio-8080-exec-4] .c.i.DriverManagerConnectionProviderImpl : HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2019-06-02 17:16:07.020  INFO 12292 --- [http-nio-8080-exec-4] .c.i.DriverManagerConnectionProviderImpl : HHH000401: using driver [null] at URL [jdbc:mysql://localhost:3306/robotichand]
+2019-06-02 17:16:07.020  INFO 12292 --- [http-nio-8080-exec-4] .c.i.DriverManagerConnectionProviderImpl : HHH000046: Connection properties: {password=****, user=root}
+2019-06-02 17:16:07.020  INFO 12292 --- [http-nio-8080-exec-4] .c.i.DriverManagerConnectionProviderImpl : HHH000006: Autocommit mode: false
+2019-06-02 17:16:07.021  INFO 12292 --- [http-nio-8080-exec-4] .c.i.DriverManagerConnectionProviderImpl : HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-06-02 17:16:07.038  INFO 12292 --- [http-nio-8080-exec-4] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-02 17:16:07.056  INFO 12292 --- [http-nio-8080-exec-4] o.h.e.t.i.TransactionFactoryInitiator    : HHH000399: Using default transaction strategy (direct JDBC transactions)
+2019-06-02 17:16:07.057  INFO 12292 --- [http-nio-8080-exec-4] o.h.h.i.a.ASTQueryTranslatorFactory      : HHH000397: Using ASTQueryTranslatorFactory
+2019-06-02 17:16:07.093 DEBUG 12292 --- [http-nio-8080-exec-4] o.h.SQL                                  : select action0_.handAction as handActi1_0_, action0_.actionLeap as actionLe2_0_, action0_.availability as availabi3_0_, action0_.leapMax as leapMax4_0_, action0_.leapMin as leapMin5_0_, action0_.servoDirection as servoDir6_0_, action0_.servoMax as servoMax7_0_, action0_.servoMin as servoMin8_0_ from Action action0_
+2019-06-02 17:16:07.103 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([handActi1_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.110 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([actionLe2_0_] : [VARCHAR]) - [Hand Left/Right]
+2019-06-02 17:16:07.110 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([availabi3_0_] : [INTEGER]) - [1]
+2019-06-02 17:16:07.110 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([leapMax4_0_] : [INTEGER]) - [300]
+2019-06-02 17:16:07.111 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([leapMin5_0_] : [INTEGER]) - [-300]
+2019-06-02 17:16:07.111 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoDir6_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.111 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoMax7_0_] : [INTEGER]) - [180]
+2019-06-02 17:16:07.112 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoMin8_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.113 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([handActi1_0_] : [INTEGER]) - [1]
+2019-06-02 17:16:07.115 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([actionLe2_0_] : [VARCHAR]) - [Hand Up/Down]
+2019-06-02 17:16:07.117 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([availabi3_0_] : [INTEGER]) - [1]
+2019-06-02 17:16:07.117 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([leapMax4_0_] : [INTEGER]) - [500]
+2019-06-02 17:16:07.118 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([leapMin5_0_] : [INTEGER]) - [90]
+2019-06-02 17:16:07.118 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoDir6_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.119 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoMax7_0_] : [INTEGER]) - [260]
+2019-06-02 17:16:07.119 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoMin8_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.120 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([handActi1_0_] : [INTEGER]) - [3]
+2019-06-02 17:16:07.120 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([actionLe2_0_] : [VARCHAR]) - [Hand Roll]
+2019-06-02 17:16:07.121 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([availabi3_0_] : [INTEGER]) - [1]
+2019-06-02 17:16:07.121 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([leapMax4_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.123 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([leapMin5_0_] : [INTEGER]) - [-180]
+2019-06-02 17:16:07.123 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoDir6_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.123 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoMax7_0_] : [INTEGER]) - [90]
+2019-06-02 17:16:07.124 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoMin8_0_] : [INTEGER]) - [-50]
+2019-06-02 17:16:07.124 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([handActi1_0_] : [INTEGER]) - [4]
+2019-06-02 17:16:07.125 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([actionLe2_0_] : [VARCHAR]) - [Pinky finger]
+2019-06-02 17:16:07.127 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([availabi3_0_] : [INTEGER]) - [1]
+2019-06-02 17:16:07.128 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([leapMax4_0_] : [INTEGER]) - [90]
+2019-06-02 17:16:07.128 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([leapMin5_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.128 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoDir6_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.129 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoMax7_0_] : [INTEGER]) - [40]
+2019-06-02 17:16:07.129 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoMin8_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.129 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([handActi1_0_] : [INTEGER]) - [5]
+2019-06-02 17:16:07.130 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([actionLe2_0_] : [VARCHAR]) - [Ring finger]
+2019-06-02 17:16:07.130 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([availabi3_0_] : [INTEGER]) - [1]
+2019-06-02 17:16:07.130 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([leapMax4_0_] : [INTEGER]) - [90]
+2019-06-02 17:16:07.131 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([leapMin5_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.131 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoDir6_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.131 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoMax7_0_] : [INTEGER]) - [30]
+2019-06-02 17:16:07.132 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoMin8_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.133 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([handActi1_0_] : [INTEGER]) - [6]
+2019-06-02 17:16:07.134 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([actionLe2_0_] : [VARCHAR]) - [Middle finger]
+2019-06-02 17:16:07.136 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([availabi3_0_] : [INTEGER]) - [1]
+2019-06-02 17:16:07.138 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([leapMax4_0_] : [INTEGER]) - [90]
+2019-06-02 17:16:07.139 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([leapMin5_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.139 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoDir6_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.139 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoMax7_0_] : [INTEGER]) - [30]
+2019-06-02 17:16:07.140 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoMin8_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.140 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([handActi1_0_] : [INTEGER]) - [7]
+2019-06-02 17:16:07.141 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([actionLe2_0_] : [VARCHAR]) - [Index finger]
+2019-06-02 17:16:07.141 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([availabi3_0_] : [INTEGER]) - [1]
+2019-06-02 17:16:07.142 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([leapMax4_0_] : [INTEGER]) - [90]
+2019-06-02 17:16:07.142 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([leapMin5_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.142 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoDir6_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.143 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoMax7_0_] : [INTEGER]) - [30]
+2019-06-02 17:16:07.143 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoMin8_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.143 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([handActi1_0_] : [INTEGER]) - [10]
+2019-06-02 17:16:07.144 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([actionLe2_0_] : [VARCHAR]) - [Thumb]
+2019-06-02 17:16:07.144 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([availabi3_0_] : [INTEGER]) - [1]
+2019-06-02 17:16:07.144 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([leapMax4_0_] : [INTEGER]) - [40]
+2019-06-02 17:16:07.145 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([leapMin5_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.145 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoDir6_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.146 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoMax7_0_] : [INTEGER]) - [30]
+2019-06-02 17:16:07.146 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([servoMin8_0_] : [INTEGER]) - [0]
+2019-06-02 17:16:07.160 TRACE 12292 --- [http-nio-8080-exec-4] o.s.w.s.DispatcherServlet                : Rendering view [org.springframework.web.servlet.view.InternalResourceView: name 'main'; URL [/WEB-INF/pages/main.jsp]] 
+2019-06-02 17:16:07.160 DEBUG 12292 --- [http-nio-8080-exec-4] o.s.w.s.v.InternalResourceView           : View name 'main', model {}
+2019-06-02 17:16:07.162 DEBUG 12292 --- [http-nio-8080-exec-4] o.s.w.s.v.InternalResourceView           : Forwarding to [/WEB-INF/pages/main.jsp]
+2019-06-02 17:16:07.361 DEBUG 12292 --- [http-nio-8080-exec-4] o.s.w.s.DispatcherServlet                : Completed 200 OK, headers={}
+2019-06-02 17:16:07.379 TRACE 12292 --- [http-nio-8080-exec-3] o.s.w.s.DispatcherServlet                : GET "/resources/css/style.css", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:07.396 TRACE 12292 --- [http-nio-8080-exec-3] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:07.390 TRACE 12292 --- [http-nio-8080-exec-2] o.s.w.s.DispatcherServlet                : GET "/resources/js/jQuery.js", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:07.401 TRACE 12292 --- [http-nio-8080-exec-3] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:07.386 TRACE 12292 --- [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet                : GET "/resources/js/formsCheck.js", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:07.403 TRACE 12292 --- [http-nio-8080-exec-2] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:07.406 TRACE 12292 --- [http-nio-8080-exec-2] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:07.410 TRACE 12292 --- [http-nio-8080-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not modified
+2019-06-02 17:16:07.411 TRACE 12292 --- [http-nio-8080-exec-3] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:07.411 DEBUG 12292 --- [http-nio-8080-exec-3] o.s.w.s.DispatcherServlet                : Completed 304 NOT_MODIFIED, headers={masked}
+2019-06-02 17:16:07.411 TRACE 12292 --- [http-nio-8080-exec-2] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not modified
+2019-06-02 17:16:07.406 TRACE 12292 --- [http-nio-8080-exec-1] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:07.411 TRACE 12292 --- [http-nio-8080-exec-2] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:07.413 TRACE 12292 --- [http-nio-8080-exec-1] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:07.414 DEBUG 12292 --- [http-nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Completed 304 NOT_MODIFIED, headers={masked}
+2019-06-02 17:16:07.415 TRACE 12292 --- [http-nio-8080-exec-1] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not modified
+2019-06-02 17:16:07.416 TRACE 12292 --- [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:07.420 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.DispatcherServlet                : GET "/resources/js/main.js", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:07.422 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:07.423 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:07.414 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : GET "/resources/js/controlMenu.js", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:07.420 DEBUG 12292 --- [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Completed 304 NOT_MODIFIED, headers={masked}
+2019-06-02 17:16:07.429 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:07.432 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:07.438 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:07.437 DEBUG 12292 --- [http-nio-8080-exec-9] o.s.w.s.DispatcherServlet                : Completed 200 OK, headers={masked}
+2019-06-02 17:16:07.439 TRACE 12292 --- [http-nio-8080-exec-8] o.s.w.s.DispatcherServlet                : GET "/resources/js/leap.js", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:07.440 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:07.447 TRACE 12292 --- [http-nio-8080-exec-8] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:07.439 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.DispatcherServlet                : GET "/resources/js/leap-0.6.4.min.js", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:07.447 DEBUG 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : Completed 200 OK, headers={masked}
+2019-06-02 17:16:07.453 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : GET "/resources/images/help.png", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:07.451 TRACE 12292 --- [http-nio-8080-exec-8] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:07.455 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:07.456 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:07.459 TRACE 12292 --- [http-nio-8080-exec-8] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:07.452 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:07.462 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:07.461 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:07.462 DEBUG 12292 --- [http-nio-8080-exec-8] o.s.w.s.DispatcherServlet                : Completed 200 OK, headers={masked}
+2019-06-02 17:16:07.464 DEBUG 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : Completed 200 OK, headers={masked}
+2019-06-02 17:16:07.476 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:07.477 DEBUG 12292 --- [http-nio-8080-exec-9] o.s.w.s.DispatcherServlet                : Completed 200 OK, headers={masked}
+2019-06-02 17:16:07.488 TRACE 12292 --- [http-nio-8080-exec-7] o.s.w.s.DispatcherServlet                : GET "/resources/images/mainBackground.jpg", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:07.490 TRACE 12292 --- [http-nio-8080-exec-7] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:07.492 TRACE 12292 --- [http-nio-8080-exec-7] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:07.493 TRACE 12292 --- [http-nio-8080-exec-7] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not modified
+2019-06-02 17:16:07.493 TRACE 12292 --- [http-nio-8080-exec-7] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:07.493 DEBUG 12292 --- [http-nio-8080-exec-7] o.s.w.s.DispatcherServlet                : Completed 304 NOT_MODIFIED, headers={masked}
+2019-06-02 17:16:07.600 TRACE 12292 --- [http-nio-8080-exec-6] o.s.w.s.DispatcherServlet                : GET "/favicon.ico", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:07.602 TRACE 12292 --- [http-nio-8080-exec-6] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler [class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], ServletContext resource [/], class path resource []]] and 1 interceptors
+2019-06-02 17:16:07.605 TRACE 12292 --- [http-nio-8080-exec-6] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not modified
+2019-06-02 17:16:07.608 TRACE 12292 --- [http-nio-8080-exec-6] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:07.609 DEBUG 12292 --- [http-nio-8080-exec-6] o.s.w.s.DispatcherServlet                : Completed 304 NOT_MODIFIED, headers={masked}
+2019-06-02 17:16:11.424 TRACE 12292 --- [http-nio-8080-exec-5] o.s.w.s.DispatcherServlet                : POST "/action/checkConnection", parameters={masked}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:11.424 TRACE 12292 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public org.springframework.http.ResponseEntity<?> roboticHand.Controllers.ActionController.checkConnection(java.lang.String)
+2019-06-02 17:16:11.426 TRACE 12292 --- [http-nio-8080-exec-5] o.s.w.c.DefaultCorsProcessor             : Skip: request is from same origin
+2019-06-02 17:16:11.427 TRACE 12292 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/x-www-form-urlencoded;charset=UTF-8" to ["192.168.0.123="]
+2019-06-02 17:16:11.427 TRACE 12292 --- [http-nio-8080-exec-5] .w.s.m.m.a.ServletInvocableHandlerMethod : Arguments: [192.168.0.123=]
+2019-06-02 17:16:17.434 DEBUG 12292 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2019-06-02 17:16:17.435 TRACE 12292 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [""]
+2019-06-02 17:16:17.437 TRACE 12292 --- [http-nio-8080-exec-5] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:17.437 DEBUG 12292 --- [http-nio-8080-exec-5] o.s.w.s.DispatcherServlet                : Completed 400 BAD_REQUEST, headers={masked}
+2019-06-02 17:16:24.127 TRACE 12292 --- [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet                : POST "/action/checkConnection", parameters={masked}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:24.128 TRACE 12292 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public org.springframework.http.ResponseEntity<?> roboticHand.Controllers.ActionController.checkConnection(java.lang.String)
+2019-06-02 17:16:24.130 TRACE 12292 --- [http-nio-8080-exec-1] o.s.w.c.DefaultCorsProcessor             : Skip: request is from same origin
+2019-06-02 17:16:24.131 TRACE 12292 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/x-www-form-urlencoded;charset=UTF-8" to ["192.16="]
+2019-06-02 17:16:24.131 TRACE 12292 --- [http-nio-8080-exec-1] .w.s.m.m.a.ServletInvocableHandlerMethod : Arguments: [192.16=]
+2019-06-02 17:16:30.134 DEBUG 12292 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2019-06-02 17:16:30.134 TRACE 12292 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [""]
+2019-06-02 17:16:30.136 TRACE 12292 --- [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:30.136 DEBUG 12292 --- [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Completed 400 BAD_REQUEST, headers={masked}
+2019-06-02 17:16:38.793 TRACE 12292 --- [http-nio-8080-exec-8] o.s.w.s.DispatcherServlet                : GET "/admin/users", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:38.794 TRACE 12292 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String roboticHand.Controllers.AdminController.getAllUsers(javax.servlet.http.HttpServletRequest)
+2019-06-02 17:16:38.795 TRACE 12292 --- [http-nio-8080-exec-8] .w.s.m.m.a.ServletInvocableHandlerMethod : Arguments: [org.apache.catalina.connector.RequestFacade@689758e]
+2019-06-02 17:16:38.796  INFO 12292 --- [http-nio-8080-exec-8] o.h.c.Configuration                      : HHH000043: Configuring from resource: /hibernate.cfg.xml
+2019-06-02 17:16:38.796  INFO 12292 --- [http-nio-8080-exec-8] o.h.c.Configuration                      : HHH000040: Configuration resource: /hibernate.cfg.xml
+2019-06-02 17:16:38.802  INFO 12292 --- [http-nio-8080-exec-8] o.h.c.Configuration                      : HHH000041: Configured SessionFactory: null
+2019-06-02 17:16:38.807  INFO 12292 --- [http-nio-8080-exec-8] .c.i.DriverManagerConnectionProviderImpl : HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2019-06-02 17:16:38.807  INFO 12292 --- [http-nio-8080-exec-8] .c.i.DriverManagerConnectionProviderImpl : HHH000401: using driver [null] at URL [jdbc:mysql://localhost:3306/robotichand]
+2019-06-02 17:16:38.807  INFO 12292 --- [http-nio-8080-exec-8] .c.i.DriverManagerConnectionProviderImpl : HHH000046: Connection properties: {password=****, user=root}
+2019-06-02 17:16:38.808  INFO 12292 --- [http-nio-8080-exec-8] .c.i.DriverManagerConnectionProviderImpl : HHH000006: Autocommit mode: false
+2019-06-02 17:16:38.808  INFO 12292 --- [http-nio-8080-exec-8] .c.i.DriverManagerConnectionProviderImpl : HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-06-02 17:16:38.827  INFO 12292 --- [http-nio-8080-exec-8] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-02 17:16:40.360  INFO 12292 --- [http-nio-8080-exec-8] o.h.e.t.i.TransactionFactoryInitiator    : HHH000399: Using default transaction strategy (direct JDBC transactions)
+2019-06-02 17:16:40.360  INFO 12292 --- [http-nio-8080-exec-8] o.h.h.i.a.ASTQueryTranslatorFactory      : HHH000397: Using ASTQueryTranslatorFactory
+2019-06-02 17:16:40.390 DEBUG 12292 --- [http-nio-8080-exec-8] o.h.SQL                                  : select user0_.id as id1_2_, user0_.login as login2_2_, user0_.name as name3_2_, user0_.password as password4_2_, user0_.rights as rights5_2_, user0_.secretAnswer as secretAn6_2_, user0_.secretQuestion as secretQu7_2_, user0_.surname as surname8_2_ from User user0_ where user0_.rights<>'S'
+2019-06-02 17:16:40.395 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [2]
+2019-06-02 17:16:40.396 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [asaa]
+2019-06-02 17:16:40.396 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [sdds]
+2019-06-02 17:16:40.397 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [0a0a92b1f7bf4320591a4d85e135fc5d]
+2019-06-02 17:16:40.397 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:40.398 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [b7a926ed14af28c1ad83efcad1eda1c8]
+2019-06-02 17:16:40.398 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:40.400 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [dsds]
+2019-06-02 17:16:40.401 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [3]
+2019-06-02 17:16:40.402 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [df]
+2019-06-02 17:16:40.403 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [sda]
+2019-06-02 17:16:40.404 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [606d260c0c43ec34808e4ec83b43f6db]
+2019-06-02 17:16:40.404 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:40.405 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [ddfdf]
+2019-06-02 17:16:40.405 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:40.406 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [dsad]
+2019-06-02 17:16:40.406 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [4]
+2019-06-02 17:16:40.407 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [dfsd]
+2019-06-02 17:16:40.407 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [dsf]
+2019-06-02 17:16:40.408 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [606d260c0c43ec34808e4ec83b43f6db]
+2019-06-02 17:16:40.408 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:40.409 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [fds]
+2019-06-02 17:16:40.409 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:40.410 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [fdsf]
+2019-06-02 17:16:40.410 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [5]
+2019-06-02 17:16:40.411 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [dfsf]
+2019-06-02 17:16:40.414 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [D]
+2019-06-02 17:16:40.414 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [606d260c0c43ec34808e4ec83b43f6db]
+2019-06-02 17:16:40.414 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:40.415 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [s]
+2019-06-02 17:16:40.416 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:40.417 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [S]
+2019-06-02 17:16:40.417 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [6]
+2019-06-02 17:16:40.418 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [Diana]
+2019-06-02 17:16:40.418 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [Diana]
+2019-06-02 17:16:40.419 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:40.419 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [A]
+2019-06-02 17:16:40.420 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:40.420 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:40.421 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [St]
+2019-06-02 17:16:40.422 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [7]
+2019-06-02 17:16:40.424 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [Dianaa]
+2019-06-02 17:16:40.424 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [Diana]
+2019-06-02 17:16:40.425 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [7652f6ca1049000adeed1fbe5b630b0e]
+2019-06-02 17:16:40.426 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [B]
+2019-06-02 17:16:40.426 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [80803392f3dae58474a12a7809441bc3]
+2019-06-02 17:16:40.426 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:40.428 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [Stelmakh]
+2019-06-02 17:16:40.430 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [8]
+2019-06-02 17:16:40.431 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [dsadsadasdas]
+2019-06-02 17:16:40.432 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [Diana]
+2019-06-02 17:16:40.434 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [606d260c0c43ec34808e4ec83b43f6db]
+2019-06-02 17:16:40.434 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:40.435 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [dsada]
+2019-06-02 17:16:40.435 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:40.435 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [S]
+2019-06-02 17:16:40.436 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [9]
+2019-06-02 17:16:40.437 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [fdsfd]
+2019-06-02 17:16:40.438 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [ds]
+2019-06-02 17:16:40.439 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [606d260c0c43ec34808e4ec83b43f6db]
+2019-06-02 17:16:40.439 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:40.441 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [sd]
+2019-06-02 17:16:40.442 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:40.442 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [sd]
+2019-06-02 17:16:40.443 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [10]
+2019-06-02 17:16:40.443 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [inna70]
+2019-06-02 17:16:40.444 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [sds]
+2019-06-02 17:16:40.444 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [606d260c0c43ec34808e4ec83b43f6db]
+2019-06-02 17:16:40.444 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:40.445 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [sd]
+2019-06-02 17:16:40.445 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:40.446 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [sd]
+2019-06-02 17:16:40.446 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [11]
+2019-06-02 17:16:40.447 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [Keany]
+2019-06-02 17:16:40.447 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [Kean]
+2019-06-02 17:16:40.447 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [606d260c0c43ec34808e4ec83b43f6db]
+2019-06-02 17:16:40.448 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:40.448 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [f8d026148ac87bb9f865a9d0f6d1f76d]
+2019-06-02 17:16:40.449 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:40.450 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [Liwely]
+2019-06-02 17:16:40.450 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [12]
+2019-06-02 17:16:40.451 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [Me]
+2019-06-02 17:16:40.453 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [Kale]
+2019-06-02 17:16:40.454 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [1cf3b120a28f9057e1b44cce06e2fad4]
+2019-06-02 17:16:40.454 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:40.455 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [80803392f3dae58474a12a7809441bc3]
+2019-06-02 17:16:40.455 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:40.455 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [Grass]
+2019-06-02 17:16:40.456 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [52]
+2019-06-02 17:16:40.457 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [Vasyaaaaaa]
+2019-06-02 17:16:40.457 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [kdsoa]
+2019-06-02 17:16:40.458 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:40.458 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:40.459 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [aacd5602b04e2d8e450ac8721fcfffbf]
+2019-06-02 17:16:40.459 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:40.460 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [dsadko]
+2019-06-02 17:16:40.460 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [53]
+2019-06-02 17:16:40.461 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [user321]
+2019-06-02 17:16:40.461 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [Dan]
+2019-06-02 17:16:40.462 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [11e1b4c9b589b80e2ef8dca951930b62]
+2019-06-02 17:16:40.462 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [0]
+2019-06-02 17:16:40.463 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [00768e21db12a8c3455f8afbc9f6d7fd]
+2019-06-02 17:16:40.466 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:40.468 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [Schneider]
+2019-06-02 17:16:40.469 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [54]
+2019-06-02 17:16:40.469 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [D]
+2019-06-02 17:16:40.470 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - []
+2019-06-02 17:16:40.470 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:40.471 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [B]
+2019-06-02 17:16:40.471 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - []
+2019-06-02 17:16:40.471 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [sss]
+2019-06-02 17:16:40.472 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - []
+2019-06-02 17:16:40.472 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [100369]
+2019-06-02 17:16:40.473 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [user123]
+2019-06-02 17:16:40.473 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [dfsf]
+2019-06-02 17:16:40.474 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [d9e4eca2aebc5c6c7e223ca9cedd0961]
+2019-06-02 17:16:40.479 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [0]
+2019-06-02 17:16:40.480 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [aacd5602b04e2d8e450ac8721fcfffbf]
+2019-06-02 17:16:40.480 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:40.480 TRACE 12292 --- [http-nio-8080-exec-8] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [fdsfsf]
+2019-06-02 17:16:40.483 TRACE 12292 --- [http-nio-8080-exec-8] o.s.w.s.DispatcherServlet                : Rendering view [org.springframework.web.servlet.view.InternalResourceView: name 'adminUsers'; URL [/WEB-INF/pages/adminUsers.jsp]] 
+2019-06-02 17:16:40.484 DEBUG 12292 --- [http-nio-8080-exec-8] o.s.w.s.v.InternalResourceView           : View name 'adminUsers', model {}
+2019-06-02 17:16:40.485 DEBUG 12292 --- [http-nio-8080-exec-8] o.s.w.s.v.InternalResourceView           : Forwarding to [/WEB-INF/pages/adminUsers.jsp]
+2019-06-02 17:16:40.731 DEBUG 12292 --- [http-nio-8080-exec-8] o.s.w.s.DispatcherServlet                : Completed 200 OK, headers={masked}
+2019-06-02 17:16:40.745 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : GET "/resources/css/style.css", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:40.747 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:40.747 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:40.754 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not modified
+2019-06-02 17:16:40.755 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:40.757 DEBUG 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : Completed 304 NOT_MODIFIED, headers={masked}
+2019-06-02 17:16:40.761 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.DispatcherServlet                : GET "/resources/js/jQuery.js", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:40.762 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:40.767 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:40.768 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not modified
+2019-06-02 17:16:40.768 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:40.769 DEBUG 12292 --- [http-nio-8080-exec-9] o.s.w.s.DispatcherServlet                : Completed 304 NOT_MODIFIED, headers={masked}
+2019-06-02 17:16:40.772 TRACE 12292 --- [http-nio-8080-exec-7] o.s.w.s.DispatcherServlet                : GET "/resources/js/adminUsers.js", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:40.773 TRACE 12292 --- [http-nio-8080-exec-7] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:40.773 TRACE 12292 --- [http-nio-8080-exec-7] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:40.777 TRACE 12292 --- [http-nio-8080-exec-7] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:40.777 DEBUG 12292 --- [http-nio-8080-exec-7] o.s.w.s.DispatcherServlet                : Completed 200 OK, headers={masked}
+2019-06-02 17:16:40.782 TRACE 12292 --- [http-nio-8080-exec-6] o.s.w.s.DispatcherServlet                : GET "/resources/images/mainBackground.jpg", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:40.784 TRACE 12292 --- [http-nio-8080-exec-6] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:40.784 TRACE 12292 --- [http-nio-8080-exec-6] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:40.786 TRACE 12292 --- [http-nio-8080-exec-6] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not modified
+2019-06-02 17:16:40.787 TRACE 12292 --- [http-nio-8080-exec-6] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:40.787 DEBUG 12292 --- [http-nio-8080-exec-6] o.s.w.s.DispatcherServlet                : Completed 304 NOT_MODIFIED, headers={masked}
+2019-06-02 17:16:40.891 TRACE 12292 --- [http-nio-8080-exec-5] o.s.w.s.DispatcherServlet                : GET "/favicon.ico", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:40.894 TRACE 12292 --- [http-nio-8080-exec-5] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler [class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], ServletContext resource [/], class path resource []]] and 1 interceptors
+2019-06-02 17:16:40.896 TRACE 12292 --- [http-nio-8080-exec-5] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not modified
+2019-06-02 17:16:40.897 TRACE 12292 --- [http-nio-8080-exec-5] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:40.897 DEBUG 12292 --- [http-nio-8080-exec-5] o.s.w.s.DispatcherServlet                : Completed 304 NOT_MODIFIED, headers={masked}
+2019-06-02 17:16:42.632 TRACE 12292 --- [http-nio-8080-exec-2] o.s.w.s.DispatcherServlet                : POST "/admin/userRightsEdit", parameters={masked}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:42.634 TRACE 12292 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String roboticHand.Controllers.AdminController.changeUserRights(java.lang.String,javax.servlet.http.HttpServletRequest)
+2019-06-02 17:16:42.634 TRACE 12292 --- [http-nio-8080-exec-2] o.s.w.c.DefaultCorsProcessor             : Skip: request is from same origin
+2019-06-02 17:16:42.637 TRACE 12292 --- [http-nio-8080-exec-2] .w.s.m.m.a.ServletInvocableHandlerMethod : Arguments: [{"login":"Diana","rights":"U"}, org.apache.catalina.connector.RequestFacade@689758e]
+2019-06-02 17:16:42.640  INFO 12292 --- [http-nio-8080-exec-2] o.h.c.Configuration                      : HHH000043: Configuring from resource: /hibernate.cfg.xml
+2019-06-02 17:16:42.641  INFO 12292 --- [http-nio-8080-exec-2] o.h.c.Configuration                      : HHH000040: Configuration resource: /hibernate.cfg.xml
+2019-06-02 17:16:42.644  INFO 12292 --- [http-nio-8080-exec-2] o.h.c.Configuration                      : HHH000041: Configured SessionFactory: null
+2019-06-02 17:16:42.646  INFO 12292 --- [http-nio-8080-exec-2] .c.i.DriverManagerConnectionProviderImpl : HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2019-06-02 17:16:42.647  INFO 12292 --- [http-nio-8080-exec-2] .c.i.DriverManagerConnectionProviderImpl : HHH000401: using driver [null] at URL [jdbc:mysql://localhost:3306/robotichand]
+2019-06-02 17:16:42.647  INFO 12292 --- [http-nio-8080-exec-2] .c.i.DriverManagerConnectionProviderImpl : HHH000046: Connection properties: {password=****, user=root}
+2019-06-02 17:16:42.647  INFO 12292 --- [http-nio-8080-exec-2] .c.i.DriverManagerConnectionProviderImpl : HHH000006: Autocommit mode: false
+2019-06-02 17:16:42.648  INFO 12292 --- [http-nio-8080-exec-2] .c.i.DriverManagerConnectionProviderImpl : HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-06-02 17:16:42.662  INFO 12292 --- [http-nio-8080-exec-2] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-02 17:16:42.673  INFO 12292 --- [http-nio-8080-exec-2] o.h.e.t.i.TransactionFactoryInitiator    : HHH000399: Using default transaction strategy (direct JDBC transactions)
+2019-06-02 17:16:42.674  INFO 12292 --- [http-nio-8080-exec-2] o.h.h.i.a.ASTQueryTranslatorFactory      : HHH000397: Using ASTQueryTranslatorFactory
+2019-06-02 17:16:42.695 DEBUG 12292 --- [http-nio-8080-exec-2] o.h.SQL                                  : select user0_.id as id1_2_, user0_.login as login2_2_, user0_.name as name3_2_, user0_.password as password4_2_, user0_.rights as rights5_2_, user0_.secretAnswer as secretAn6_2_, user0_.secretQuestion as secretQu7_2_, user0_.surname as surname8_2_ from User user0_ where user0_.login='Diana'
+2019-06-02 17:16:42.698 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [6]
+2019-06-02 17:16:42.699 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [Diana]
+2019-06-02 17:16:42.699 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [Diana]
+2019-06-02 17:16:42.700 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:42.700 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [A]
+2019-06-02 17:16:42.701 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:42.701 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:42.702 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [St]
+2019-06-02 17:16:42.703  INFO 12292 --- [http-nio-8080-exec-2] o.h.c.Configuration                      : HHH000043: Configuring from resource: /hibernate.cfg.xml
+2019-06-02 17:16:42.703  INFO 12292 --- [http-nio-8080-exec-2] o.h.c.Configuration                      : HHH000040: Configuration resource: /hibernate.cfg.xml
+2019-06-02 17:16:42.706  INFO 12292 --- [http-nio-8080-exec-2] o.h.c.Configuration                      : HHH000041: Configured SessionFactory: null
+2019-06-02 17:16:42.709  INFO 12292 --- [http-nio-8080-exec-2] .c.i.DriverManagerConnectionProviderImpl : HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2019-06-02 17:16:42.710  INFO 12292 --- [http-nio-8080-exec-2] .c.i.DriverManagerConnectionProviderImpl : HHH000401: using driver [null] at URL [jdbc:mysql://localhost:3306/robotichand]
+2019-06-02 17:16:42.710  INFO 12292 --- [http-nio-8080-exec-2] .c.i.DriverManagerConnectionProviderImpl : HHH000046: Connection properties: {password=****, user=root}
+2019-06-02 17:16:42.711  INFO 12292 --- [http-nio-8080-exec-2] .c.i.DriverManagerConnectionProviderImpl : HHH000006: Autocommit mode: false
+2019-06-02 17:16:42.711  INFO 12292 --- [http-nio-8080-exec-2] .c.i.DriverManagerConnectionProviderImpl : HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-06-02 17:16:42.727  INFO 12292 --- [http-nio-8080-exec-2] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-02 17:16:42.735  INFO 12292 --- [http-nio-8080-exec-2] o.h.e.t.i.TransactionFactoryInitiator    : HHH000399: Using default transaction strategy (direct JDBC transactions)
+2019-06-02 17:16:42.736  INFO 12292 --- [http-nio-8080-exec-2] o.h.h.i.a.ASTQueryTranslatorFactory      : HHH000397: Using ASTQueryTranslatorFactory
+2019-06-02 17:16:42.754  INFO 12292 --- [http-nio-8080-exec-2] o.h.c.Configuration                      : HHH000043: Configuring from resource: /hibernate.cfg.xml
+2019-06-02 17:16:42.754  INFO 12292 --- [http-nio-8080-exec-2] o.h.c.Configuration                      : HHH000040: Configuration resource: /hibernate.cfg.xml
+2019-06-02 17:16:42.758  INFO 12292 --- [http-nio-8080-exec-2] o.h.c.Configuration                      : HHH000041: Configured SessionFactory: null
+2019-06-02 17:16:42.761  INFO 12292 --- [http-nio-8080-exec-2] .c.i.DriverManagerConnectionProviderImpl : HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2019-06-02 17:16:42.762  INFO 12292 --- [http-nio-8080-exec-2] .c.i.DriverManagerConnectionProviderImpl : HHH000401: using driver [null] at URL [jdbc:mysql://localhost:3306/robotichand]
+2019-06-02 17:16:42.763  INFO 12292 --- [http-nio-8080-exec-2] .c.i.DriverManagerConnectionProviderImpl : HHH000046: Connection properties: {password=****, user=root}
+2019-06-02 17:16:42.763  INFO 12292 --- [http-nio-8080-exec-2] .c.i.DriverManagerConnectionProviderImpl : HHH000006: Autocommit mode: false
+2019-06-02 17:16:42.763  INFO 12292 --- [http-nio-8080-exec-2] .c.i.DriverManagerConnectionProviderImpl : HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-06-02 17:16:42.779  INFO 12292 --- [http-nio-8080-exec-2] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-02 17:16:42.796  INFO 12292 --- [http-nio-8080-exec-2] o.h.e.t.i.TransactionFactoryInitiator    : HHH000399: Using default transaction strategy (direct JDBC transactions)
+2019-06-02 17:16:42.796  INFO 12292 --- [http-nio-8080-exec-2] o.h.h.i.a.ASTQueryTranslatorFactory      : HHH000397: Using ASTQueryTranslatorFactory
+2019-06-02 17:16:42.816 DEBUG 12292 --- [http-nio-8080-exec-2] o.h.SQL                                  : select user0_.id as id1_2_, user0_.login as login2_2_, user0_.name as name3_2_, user0_.password as password4_2_, user0_.rights as rights5_2_, user0_.secretAnswer as secretAn6_2_, user0_.secretQuestion as secretQu7_2_, user0_.surname as surname8_2_ from User user0_ where user0_.login='Diana'
+2019-06-02 17:16:42.819 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [6]
+2019-06-02 17:16:42.820 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [Diana]
+2019-06-02 17:16:42.821 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [Diana]
+2019-06-02 17:16:42.821 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:42.821 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [A]
+2019-06-02 17:16:42.822 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:42.823 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:42.823 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [St]
+2019-06-02 17:16:42.843 DEBUG 12292 --- [http-nio-8080-exec-2] o.h.SQL                                  : update User set login=?, name=?, password=?, rights=?, secretAnswer=?, secretQuestion=?, surname=? where id=?
+2019-06-02 17:16:42.848 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [VARCHAR] - [Diana]
+2019-06-02 17:16:42.848 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicBinder                    : binding parameter [2] as [VARCHAR] - [Diana]
+2019-06-02 17:16:42.850 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicBinder                    : binding parameter [3] as [VARCHAR] - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:42.850 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicBinder                    : binding parameter [4] as [CHAR] - [U]
+2019-06-02 17:16:42.850 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicBinder                    : binding parameter [5] as [VARCHAR] - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:42.851 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicBinder                    : binding parameter [6] as [VARCHAR] - [Mother's maiden name?]
+2019-06-02 17:16:42.851 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicBinder                    : binding parameter [7] as [VARCHAR] - [St]
+2019-06-02 17:16:42.852 TRACE 12292 --- [http-nio-8080-exec-2] o.h.t.d.s.BasicBinder                    : binding parameter [8] as [INTEGER] - [6]
+2019-06-02 17:16:42.868 TRACE 12292 --- [http-nio-8080-exec-2] o.s.w.s.v.InternalResourceViewResolver   : View with key [adminUsers] served from cache
+2019-06-02 17:16:42.868 TRACE 12292 --- [http-nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Rendering view [org.springframework.web.servlet.view.InternalResourceView: name 'adminUsers'; URL [/WEB-INF/pages/adminUsers.jsp]] 
+2019-06-02 17:16:42.869 DEBUG 12292 --- [http-nio-8080-exec-2] o.s.w.s.v.InternalResourceView           : View name 'adminUsers', model {}
+2019-06-02 17:16:42.869 DEBUG 12292 --- [http-nio-8080-exec-2] o.s.w.s.v.InternalResourceView           : Forwarding to [/WEB-INF/pages/adminUsers.jsp]
+2019-06-02 17:16:42.873 DEBUG 12292 --- [http-nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Completed 200 OK, headers={masked}
+2019-06-02 17:16:44.744 TRACE 12292 --- [http-nio-8080-exec-4] o.s.w.s.DispatcherServlet                : GET "/user/userInfoRedirect", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:44.746 TRACE 12292 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String roboticHand.Controllers.UserController.userInfoRedirect(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-06-02 17:16:44.746 TRACE 12292 --- [http-nio-8080-exec-4] .w.s.m.m.a.ServletInvocableHandlerMethod : Arguments: [org.apache.catalina.connector.RequestFacade@689758e, {}]
+2019-06-02 17:16:44.747  INFO 12292 --- [http-nio-8080-exec-4] o.h.c.Configuration                      : HHH000043: Configuring from resource: /hibernate.cfg.xml
+2019-06-02 17:16:44.749  INFO 12292 --- [http-nio-8080-exec-4] o.h.c.Configuration                      : HHH000040: Configuration resource: /hibernate.cfg.xml
+2019-06-02 17:16:44.753  INFO 12292 --- [http-nio-8080-exec-4] o.h.c.Configuration                      : HHH000041: Configured SessionFactory: null
+2019-06-02 17:16:44.756  INFO 12292 --- [http-nio-8080-exec-4] .c.i.DriverManagerConnectionProviderImpl : HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2019-06-02 17:16:44.756  INFO 12292 --- [http-nio-8080-exec-4] .c.i.DriverManagerConnectionProviderImpl : HHH000401: using driver [null] at URL [jdbc:mysql://localhost:3306/robotichand]
+2019-06-02 17:16:44.757  INFO 12292 --- [http-nio-8080-exec-4] .c.i.DriverManagerConnectionProviderImpl : HHH000046: Connection properties: {password=****, user=root}
+2019-06-02 17:16:44.757  INFO 12292 --- [http-nio-8080-exec-4] .c.i.DriverManagerConnectionProviderImpl : HHH000006: Autocommit mode: false
+2019-06-02 17:16:44.757  INFO 12292 --- [http-nio-8080-exec-4] .c.i.DriverManagerConnectionProviderImpl : HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-06-02 17:16:44.771  INFO 12292 --- [http-nio-8080-exec-4] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-02 17:16:44.780  INFO 12292 --- [http-nio-8080-exec-4] o.h.e.t.i.TransactionFactoryInitiator    : HHH000399: Using default transaction strategy (direct JDBC transactions)
+2019-06-02 17:16:44.781  INFO 12292 --- [http-nio-8080-exec-4] o.h.h.i.a.ASTQueryTranslatorFactory      : HHH000397: Using ASTQueryTranslatorFactory
+2019-06-02 17:16:44.804 DEBUG 12292 --- [http-nio-8080-exec-4] o.h.SQL                                  : select user0_.id as id1_2_, user0_.login as login2_2_, user0_.name as name3_2_, user0_.password as password4_2_, user0_.rights as rights5_2_, user0_.secretAnswer as secretAn6_2_, user0_.secretQuestion as secretQu7_2_, user0_.surname as surname8_2_ from User user0_ where user0_.login=''
+2019-06-02 17:16:44.807 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [1]
+2019-06-02 17:16:44.807 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - []
+2019-06-02 17:16:44.808 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [Diana]
+2019-06-02 17:16:44.808 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:44.809 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [S]
+2019-06-02 17:16:44.809 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:44.810 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:44.810 TRACE 12292 --- [http-nio-8080-exec-4] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [Stelmakh]
+2019-06-02 17:16:44.812 TRACE 12292 --- [http-nio-8080-exec-4] o.s.w.s.DispatcherServlet                : Rendering view [org.springframework.web.servlet.view.InternalResourceView: name 'userInfo'; URL [/WEB-INF/pages/userInfo.jsp]] 
+2019-06-02 17:16:44.812 DEBUG 12292 --- [http-nio-8080-exec-4] o.s.w.s.v.InternalResourceView           : View name 'userInfo', model {login=, name=Diana, surname=Stelmakh, question=Mother's maiden name?}
+2019-06-02 17:16:44.813 DEBUG 12292 --- [http-nio-8080-exec-4] o.s.w.s.v.InternalResourceView           : Forwarding to [/WEB-INF/pages/userInfo.jsp]
+2019-06-02 17:16:44.951 DEBUG 12292 --- [http-nio-8080-exec-4] o.s.w.s.DispatcherServlet                : Completed 200 OK, headers={}
+2019-06-02 17:16:44.974 TRACE 12292 --- [http-nio-8080-exec-4] o.s.w.s.DispatcherServlet                : GET "/resources/js/formsCheck.js", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:44.980 TRACE 12292 --- [http-nio-8080-exec-4] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:44.986 TRACE 12292 --- [http-nio-8080-exec-4] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:44.988 TRACE 12292 --- [http-nio-8080-exec-4] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not modified
+2019-06-02 17:16:44.990 TRACE 12292 --- [http-nio-8080-exec-4] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:44.991 DEBUG 12292 --- [http-nio-8080-exec-4] o.s.w.s.DispatcherServlet                : Completed 304 NOT_MODIFIED, headers={masked}
+2019-06-02 17:16:46.848 TRACE 12292 --- [http-nio-8080-exec-3] o.s.w.s.DispatcherServlet                : GET "/admin/users", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:46.848 TRACE 12292 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String roboticHand.Controllers.AdminController.getAllUsers(javax.servlet.http.HttpServletRequest)
+2019-06-02 17:16:46.850 TRACE 12292 --- [http-nio-8080-exec-3] .w.s.m.m.a.ServletInvocableHandlerMethod : Arguments: [org.apache.catalina.connector.RequestFacade@689758e]
+2019-06-02 17:16:46.851  INFO 12292 --- [http-nio-8080-exec-3] o.h.c.Configuration                      : HHH000043: Configuring from resource: /hibernate.cfg.xml
+2019-06-02 17:16:46.851  INFO 12292 --- [http-nio-8080-exec-3] o.h.c.Configuration                      : HHH000040: Configuration resource: /hibernate.cfg.xml
+2019-06-02 17:16:46.855  INFO 12292 --- [http-nio-8080-exec-3] o.h.c.Configuration                      : HHH000041: Configured SessionFactory: null
+2019-06-02 17:16:46.857  INFO 12292 --- [http-nio-8080-exec-3] .c.i.DriverManagerConnectionProviderImpl : HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2019-06-02 17:16:46.858  INFO 12292 --- [http-nio-8080-exec-3] .c.i.DriverManagerConnectionProviderImpl : HHH000401: using driver [null] at URL [jdbc:mysql://localhost:3306/robotichand]
+2019-06-02 17:16:46.859  INFO 12292 --- [http-nio-8080-exec-3] .c.i.DriverManagerConnectionProviderImpl : HHH000046: Connection properties: {password=****, user=root}
+2019-06-02 17:16:46.860  INFO 12292 --- [http-nio-8080-exec-3] .c.i.DriverManagerConnectionProviderImpl : HHH000006: Autocommit mode: false
+2019-06-02 17:16:46.860  INFO 12292 --- [http-nio-8080-exec-3] .c.i.DriverManagerConnectionProviderImpl : HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-06-02 17:16:46.873  INFO 12292 --- [http-nio-8080-exec-3] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-02 17:16:46.883  INFO 12292 --- [http-nio-8080-exec-3] o.h.e.t.i.TransactionFactoryInitiator    : HHH000399: Using default transaction strategy (direct JDBC transactions)
+2019-06-02 17:16:46.883  INFO 12292 --- [http-nio-8080-exec-3] o.h.h.i.a.ASTQueryTranslatorFactory      : HHH000397: Using ASTQueryTranslatorFactory
+2019-06-02 17:16:46.899 DEBUG 12292 --- [http-nio-8080-exec-3] o.h.SQL                                  : select user0_.id as id1_2_, user0_.login as login2_2_, user0_.name as name3_2_, user0_.password as password4_2_, user0_.rights as rights5_2_, user0_.secretAnswer as secretAn6_2_, user0_.secretQuestion as secretQu7_2_, user0_.surname as surname8_2_ from User user0_ where user0_.rights<>'S'
+2019-06-02 17:16:46.902 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [2]
+2019-06-02 17:16:46.903 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [asaa]
+2019-06-02 17:16:46.903 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [sdds]
+2019-06-02 17:16:46.904 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [0a0a92b1f7bf4320591a4d85e135fc5d]
+2019-06-02 17:16:46.904 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:46.905 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [b7a926ed14af28c1ad83efcad1eda1c8]
+2019-06-02 17:16:46.905 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:46.905 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [dsds]
+2019-06-02 17:16:46.906 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [3]
+2019-06-02 17:16:46.906 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [df]
+2019-06-02 17:16:46.907 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [sda]
+2019-06-02 17:16:46.907 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [606d260c0c43ec34808e4ec83b43f6db]
+2019-06-02 17:16:46.908 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:46.908 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [ddfdf]
+2019-06-02 17:16:46.909 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:46.911 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [dsad]
+2019-06-02 17:16:46.911 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [4]
+2019-06-02 17:16:46.912 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [dfsd]
+2019-06-02 17:16:46.912 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [dsf]
+2019-06-02 17:16:46.913 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [606d260c0c43ec34808e4ec83b43f6db]
+2019-06-02 17:16:46.913 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:46.913 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [fds]
+2019-06-02 17:16:46.914 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:46.914 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [fdsf]
+2019-06-02 17:16:46.915 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [5]
+2019-06-02 17:16:46.915 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [dfsf]
+2019-06-02 17:16:46.916 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [D]
+2019-06-02 17:16:46.916 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [606d260c0c43ec34808e4ec83b43f6db]
+2019-06-02 17:16:46.916 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:46.917 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [s]
+2019-06-02 17:16:46.917 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:46.918 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [S]
+2019-06-02 17:16:46.918 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [6]
+2019-06-02 17:16:46.918 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [Diana]
+2019-06-02 17:16:46.919 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [Diana]
+2019-06-02 17:16:46.919 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:46.920 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:46.921 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:46.921 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:46.923 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [St]
+2019-06-02 17:16:46.924 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [7]
+2019-06-02 17:16:46.924 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [Dianaa]
+2019-06-02 17:16:46.925 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [Diana]
+2019-06-02 17:16:46.925 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [7652f6ca1049000adeed1fbe5b630b0e]
+2019-06-02 17:16:46.925 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [B]
+2019-06-02 17:16:46.926 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [80803392f3dae58474a12a7809441bc3]
+2019-06-02 17:16:46.926 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:46.927 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [Stelmakh]
+2019-06-02 17:16:46.927 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [8]
+2019-06-02 17:16:46.927 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [dsadsadasdas]
+2019-06-02 17:16:46.928 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [Diana]
+2019-06-02 17:16:46.928 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [606d260c0c43ec34808e4ec83b43f6db]
+2019-06-02 17:16:46.929 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:46.929 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [dsada]
+2019-06-02 17:16:46.929 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:46.930 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [S]
+2019-06-02 17:16:46.930 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [9]
+2019-06-02 17:16:46.931 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [fdsfd]
+2019-06-02 17:16:46.933 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [ds]
+2019-06-02 17:16:46.933 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [606d260c0c43ec34808e4ec83b43f6db]
+2019-06-02 17:16:46.934 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:46.934 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [sd]
+2019-06-02 17:16:46.935 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:46.935 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [sd]
+2019-06-02 17:16:46.935 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [10]
+2019-06-02 17:16:46.936 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [inna70]
+2019-06-02 17:16:46.936 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [sds]
+2019-06-02 17:16:46.937 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [606d260c0c43ec34808e4ec83b43f6db]
+2019-06-02 17:16:46.937 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:46.937 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [sd]
+2019-06-02 17:16:46.938 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:46.938 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [sd]
+2019-06-02 17:16:46.939 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [11]
+2019-06-02 17:16:46.939 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [Keany]
+2019-06-02 17:16:46.939 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [Kean]
+2019-06-02 17:16:46.940 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [606d260c0c43ec34808e4ec83b43f6db]
+2019-06-02 17:16:46.940 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:46.941 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [f8d026148ac87bb9f865a9d0f6d1f76d]
+2019-06-02 17:16:46.942 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:46.944 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [Liwely]
+2019-06-02 17:16:46.944 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [12]
+2019-06-02 17:16:46.944 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [Me]
+2019-06-02 17:16:46.945 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [Kale]
+2019-06-02 17:16:46.945 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [1cf3b120a28f9057e1b44cce06e2fad4]
+2019-06-02 17:16:46.945 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:46.946 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [80803392f3dae58474a12a7809441bc3]
+2019-06-02 17:16:46.946 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:46.947 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [Grass]
+2019-06-02 17:16:46.947 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [52]
+2019-06-02 17:16:46.947 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [Vasyaaaaaa]
+2019-06-02 17:16:46.948 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [kdsoa]
+2019-06-02 17:16:46.948 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:46.948 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:46.949 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [aacd5602b04e2d8e450ac8721fcfffbf]
+2019-06-02 17:16:46.950 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:46.950 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [dsadko]
+2019-06-02 17:16:46.951 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [53]
+2019-06-02 17:16:46.951 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [user321]
+2019-06-02 17:16:46.951 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [Dan]
+2019-06-02 17:16:46.952 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [11e1b4c9b589b80e2ef8dca951930b62]
+2019-06-02 17:16:46.952 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [0]
+2019-06-02 17:16:46.952 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [00768e21db12a8c3455f8afbc9f6d7fd]
+2019-06-02 17:16:46.953 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:46.955 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [Schneider]
+2019-06-02 17:16:46.955 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [54]
+2019-06-02 17:16:46.955 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [D]
+2019-06-02 17:16:46.956 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - []
+2019-06-02 17:16:46.956 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:46.957 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [B]
+2019-06-02 17:16:46.957 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - []
+2019-06-02 17:16:46.957 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [sss]
+2019-06-02 17:16:46.958 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - []
+2019-06-02 17:16:46.958 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [100369]
+2019-06-02 17:16:46.959 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [user123]
+2019-06-02 17:16:46.959 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [dfsf]
+2019-06-02 17:16:46.959 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [d9e4eca2aebc5c6c7e223ca9cedd0961]
+2019-06-02 17:16:46.960 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [0]
+2019-06-02 17:16:46.960 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [aacd5602b04e2d8e450ac8721fcfffbf]
+2019-06-02 17:16:46.960 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:46.961 TRACE 12292 --- [http-nio-8080-exec-3] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [fdsfsf]
+2019-06-02 17:16:46.962 TRACE 12292 --- [http-nio-8080-exec-3] o.s.w.s.v.InternalResourceViewResolver   : View with key [adminUsers] served from cache
+2019-06-02 17:16:46.962 TRACE 12292 --- [http-nio-8080-exec-3] o.s.w.s.DispatcherServlet                : Rendering view [org.springframework.web.servlet.view.InternalResourceView: name 'adminUsers'; URL [/WEB-INF/pages/adminUsers.jsp]] 
+2019-06-02 17:16:46.963 DEBUG 12292 --- [http-nio-8080-exec-3] o.s.w.s.v.InternalResourceView           : View name 'adminUsers', model {}
+2019-06-02 17:16:46.963 DEBUG 12292 --- [http-nio-8080-exec-3] o.s.w.s.v.InternalResourceView           : Forwarding to [/WEB-INF/pages/adminUsers.jsp]
+2019-06-02 17:16:46.967 DEBUG 12292 --- [http-nio-8080-exec-3] o.s.w.s.DispatcherServlet                : Completed 200 OK, headers={masked}
+2019-06-02 17:16:46.975 TRACE 12292 --- [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet                : GET "/resources/css/style.css", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:46.977 TRACE 12292 --- [http-nio-8080-exec-8] o.s.w.s.DispatcherServlet                : GET "/resources/js/jQuery.js", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:46.977 TRACE 12292 --- [http-nio-8080-exec-1] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:46.978 TRACE 12292 --- [http-nio-8080-exec-1] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:46.978 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : GET "/resources/js/adminUsers.js", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:46.979 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:46.980 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:46.978 TRACE 12292 --- [http-nio-8080-exec-8] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:46.981 TRACE 12292 --- [http-nio-8080-exec-8] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:46.979 TRACE 12292 --- [http-nio-8080-exec-1] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not modified
+2019-06-02 17:16:46.982 TRACE 12292 --- [http-nio-8080-exec-8] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not modified
+2019-06-02 17:16:46.981 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not modified
+2019-06-02 17:16:46.982 TRACE 12292 --- [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:46.983 TRACE 12292 --- [http-nio-8080-exec-8] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:46.984 TRACE 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:46.989 DEBUG 12292 --- [http-nio-8080-exec-8] o.s.w.s.DispatcherServlet                : Completed 304 NOT_MODIFIED, headers={masked}
+2019-06-02 17:16:46.986 DEBUG 12292 --- [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Completed 304 NOT_MODIFIED, headers={masked}
+2019-06-02 17:16:46.989 DEBUG 12292 --- [http-nio-8080-exec-10] o.s.w.s.DispatcherServlet                : Completed 304 NOT_MODIFIED, headers={masked}
+2019-06-02 17:16:47.001 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.DispatcherServlet                : GET "/resources/images/mainBackground.jpg", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:47.002 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.h.SimpleUrlHandlerMapping        : Matching patterns [/resources/**, /**]
+2019-06-02 17:16:47.004 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler ["/resources/"]] and 3 interceptors
+2019-06-02 17:16:47.005 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not modified
+2019-06-02 17:16:47.005 TRACE 12292 --- [http-nio-8080-exec-9] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:47.007 DEBUG 12292 --- [http-nio-8080-exec-9] o.s.w.s.DispatcherServlet                : Completed 304 NOT_MODIFIED, headers={masked}
+2019-06-02 17:16:47.083 TRACE 12292 --- [http-nio-8080-exec-7] o.s.w.s.DispatcherServlet                : GET "/favicon.ico", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:47.086 TRACE 12292 --- [http-nio-8080-exec-7] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped to HandlerExecutionChain with [ResourceHttpRequestHandler [class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], ServletContext resource [/], class path resource []]] and 1 interceptors
+2019-06-02 17:16:47.088 TRACE 12292 --- [http-nio-8080-exec-7] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not modified
+2019-06-02 17:16:47.088 TRACE 12292 --- [http-nio-8080-exec-7] o.s.w.s.DispatcherServlet                : No view rendering, null ModelAndView returned.
+2019-06-02 17:16:47.089 DEBUG 12292 --- [http-nio-8080-exec-7] o.s.w.s.DispatcherServlet                : Completed 304 NOT_MODIFIED, headers={masked}
+2019-06-02 17:16:48.312 TRACE 12292 --- [http-nio-8080-exec-6] o.s.w.s.DispatcherServlet                : POST "/admin/userRightsEdit", parameters={masked}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:48.312 TRACE 12292 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String roboticHand.Controllers.AdminController.changeUserRights(java.lang.String,javax.servlet.http.HttpServletRequest)
+2019-06-02 17:16:48.313 TRACE 12292 --- [http-nio-8080-exec-6] o.s.w.c.DefaultCorsProcessor             : Skip: request is from same origin
+2019-06-02 17:16:48.314 TRACE 12292 --- [http-nio-8080-exec-6] .w.s.m.m.a.ServletInvocableHandlerMethod : Arguments: [{"login":"Diana","rights":"A"}, org.apache.catalina.connector.RequestFacade@689758e]
+2019-06-02 17:16:48.314  INFO 12292 --- [http-nio-8080-exec-6] o.h.c.Configuration                      : HHH000043: Configuring from resource: /hibernate.cfg.xml
+2019-06-02 17:16:48.314  INFO 12292 --- [http-nio-8080-exec-6] o.h.c.Configuration                      : HHH000040: Configuration resource: /hibernate.cfg.xml
+2019-06-02 17:16:48.318  INFO 12292 --- [http-nio-8080-exec-6] o.h.c.Configuration                      : HHH000041: Configured SessionFactory: null
+2019-06-02 17:16:48.320  INFO 12292 --- [http-nio-8080-exec-6] .c.i.DriverManagerConnectionProviderImpl : HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2019-06-02 17:16:48.320  INFO 12292 --- [http-nio-8080-exec-6] .c.i.DriverManagerConnectionProviderImpl : HHH000401: using driver [null] at URL [jdbc:mysql://localhost:3306/robotichand]
+2019-06-02 17:16:48.321  INFO 12292 --- [http-nio-8080-exec-6] .c.i.DriverManagerConnectionProviderImpl : HHH000046: Connection properties: {password=****, user=root}
+2019-06-02 17:16:48.321  INFO 12292 --- [http-nio-8080-exec-6] .c.i.DriverManagerConnectionProviderImpl : HHH000006: Autocommit mode: false
+2019-06-02 17:16:48.321  INFO 12292 --- [http-nio-8080-exec-6] .c.i.DriverManagerConnectionProviderImpl : HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-06-02 17:16:48.336  INFO 12292 --- [http-nio-8080-exec-6] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-02 17:16:48.344  INFO 12292 --- [http-nio-8080-exec-6] o.h.e.t.i.TransactionFactoryInitiator    : HHH000399: Using default transaction strategy (direct JDBC transactions)
+2019-06-02 17:16:48.344  INFO 12292 --- [http-nio-8080-exec-6] o.h.h.i.a.ASTQueryTranslatorFactory      : HHH000397: Using ASTQueryTranslatorFactory
+2019-06-02 17:16:48.362 DEBUG 12292 --- [http-nio-8080-exec-6] o.h.SQL                                  : select user0_.id as id1_2_, user0_.login as login2_2_, user0_.name as name3_2_, user0_.password as password4_2_, user0_.rights as rights5_2_, user0_.secretAnswer as secretAn6_2_, user0_.secretQuestion as secretQu7_2_, user0_.surname as surname8_2_ from User user0_ where user0_.login='Diana'
+2019-06-02 17:16:48.364 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [6]
+2019-06-02 17:16:48.365 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [Diana]
+2019-06-02 17:16:48.365 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [Diana]
+2019-06-02 17:16:48.366 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:48.366 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:48.366 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:48.367 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:48.367 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [St]
+2019-06-02 17:16:48.368  INFO 12292 --- [http-nio-8080-exec-6] o.h.c.Configuration                      : HHH000043: Configuring from resource: /hibernate.cfg.xml
+2019-06-02 17:16:48.368  INFO 12292 --- [http-nio-8080-exec-6] o.h.c.Configuration                      : HHH000040: Configuration resource: /hibernate.cfg.xml
+2019-06-02 17:16:48.372  INFO 12292 --- [http-nio-8080-exec-6] o.h.c.Configuration                      : HHH000041: Configured SessionFactory: null
+2019-06-02 17:16:48.375  INFO 12292 --- [http-nio-8080-exec-6] .c.i.DriverManagerConnectionProviderImpl : HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2019-06-02 17:16:48.375  INFO 12292 --- [http-nio-8080-exec-6] .c.i.DriverManagerConnectionProviderImpl : HHH000401: using driver [null] at URL [jdbc:mysql://localhost:3306/robotichand]
+2019-06-02 17:16:48.376  INFO 12292 --- [http-nio-8080-exec-6] .c.i.DriverManagerConnectionProviderImpl : HHH000046: Connection properties: {password=****, user=root}
+2019-06-02 17:16:48.376  INFO 12292 --- [http-nio-8080-exec-6] .c.i.DriverManagerConnectionProviderImpl : HHH000006: Autocommit mode: false
+2019-06-02 17:16:48.376  INFO 12292 --- [http-nio-8080-exec-6] .c.i.DriverManagerConnectionProviderImpl : HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-06-02 17:16:48.389  INFO 12292 --- [http-nio-8080-exec-6] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-02 17:16:48.396  INFO 12292 --- [http-nio-8080-exec-6] o.h.e.t.i.TransactionFactoryInitiator    : HHH000399: Using default transaction strategy (direct JDBC transactions)
+2019-06-02 17:16:48.396  INFO 12292 --- [http-nio-8080-exec-6] o.h.h.i.a.ASTQueryTranslatorFactory      : HHH000397: Using ASTQueryTranslatorFactory
+2019-06-02 17:16:48.411  INFO 12292 --- [http-nio-8080-exec-6] o.h.c.Configuration                      : HHH000043: Configuring from resource: /hibernate.cfg.xml
+2019-06-02 17:16:48.411  INFO 12292 --- [http-nio-8080-exec-6] o.h.c.Configuration                      : HHH000040: Configuration resource: /hibernate.cfg.xml
+2019-06-02 17:16:48.414  INFO 12292 --- [http-nio-8080-exec-6] o.h.c.Configuration                      : HHH000041: Configured SessionFactory: null
+2019-06-02 17:16:48.417  INFO 12292 --- [http-nio-8080-exec-6] .c.i.DriverManagerConnectionProviderImpl : HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2019-06-02 17:16:48.417  INFO 12292 --- [http-nio-8080-exec-6] .c.i.DriverManagerConnectionProviderImpl : HHH000401: using driver [null] at URL [jdbc:mysql://localhost:3306/robotichand]
+2019-06-02 17:16:48.418  INFO 12292 --- [http-nio-8080-exec-6] .c.i.DriverManagerConnectionProviderImpl : HHH000046: Connection properties: {password=****, user=root}
+2019-06-02 17:16:48.418  INFO 12292 --- [http-nio-8080-exec-6] .c.i.DriverManagerConnectionProviderImpl : HHH000006: Autocommit mode: false
+2019-06-02 17:16:48.418  INFO 12292 --- [http-nio-8080-exec-6] .c.i.DriverManagerConnectionProviderImpl : HHH000115: Hibernate connection pool size: 20 (min=1)
+2019-06-02 17:16:48.431  INFO 12292 --- [http-nio-8080-exec-6] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-06-02 17:16:48.441  INFO 12292 --- [http-nio-8080-exec-6] o.h.e.t.i.TransactionFactoryInitiator    : HHH000399: Using default transaction strategy (direct JDBC transactions)
+2019-06-02 17:16:48.442  INFO 12292 --- [http-nio-8080-exec-6] o.h.h.i.a.ASTQueryTranslatorFactory      : HHH000397: Using ASTQueryTranslatorFactory
+2019-06-02 17:16:48.459 DEBUG 12292 --- [http-nio-8080-exec-6] o.h.SQL                                  : select user0_.id as id1_2_, user0_.login as login2_2_, user0_.name as name3_2_, user0_.password as password4_2_, user0_.rights as rights5_2_, user0_.secretAnswer as secretAn6_2_, user0_.secretQuestion as secretQu7_2_, user0_.surname as surname8_2_ from User user0_ where user0_.login='Diana'
+2019-06-02 17:16:48.461 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicExtractor                 : extracted value ([id1_2_] : [INTEGER]) - [6]
+2019-06-02 17:16:48.462 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicExtractor                 : extracted value ([login2_2_] : [VARCHAR]) - [Diana]
+2019-06-02 17:16:48.462 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicExtractor                 : extracted value ([name3_2_] : [VARCHAR]) - [Diana]
+2019-06-02 17:16:48.463 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicExtractor                 : extracted value ([password4_2_] : [VARCHAR]) - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:48.464 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicExtractor                 : extracted value ([rights5_2_] : [CHAR]) - [U]
+2019-06-02 17:16:48.464 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicExtractor                 : extracted value ([secretAn6_2_] : [VARCHAR]) - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:48.464 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicExtractor                 : extracted value ([secretQu7_2_] : [VARCHAR]) - [Mother's maiden name?]
+2019-06-02 17:16:48.465 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicExtractor                 : extracted value ([surname8_2_] : [VARCHAR]) - [St]
+2019-06-02 17:16:48.466 DEBUG 12292 --- [http-nio-8080-exec-6] o.h.SQL                                  : update User set login=?, name=?, password=?, rights=?, secretAnswer=?, secretQuestion=?, surname=? where id=?
+2019-06-02 17:16:48.467 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicBinder                    : binding parameter [1] as [VARCHAR] - [Diana]
+2019-06-02 17:16:48.467 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicBinder                    : binding parameter [2] as [VARCHAR] - [Diana]
+2019-06-02 17:16:48.468 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicBinder                    : binding parameter [3] as [VARCHAR] - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:48.468 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicBinder                    : binding parameter [4] as [CHAR] - [A]
+2019-06-02 17:16:48.468 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicBinder                    : binding parameter [5] as [VARCHAR] - [eb34a3f0a617c91b009720af030f5995]
+2019-06-02 17:16:48.469 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicBinder                    : binding parameter [6] as [VARCHAR] - [Mother's maiden name?]
+2019-06-02 17:16:48.469 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicBinder                    : binding parameter [7] as [VARCHAR] - [St]
+2019-06-02 17:16:48.469 TRACE 12292 --- [http-nio-8080-exec-6] o.h.t.d.s.BasicBinder                    : binding parameter [8] as [INTEGER] - [6]
+2019-06-02 17:16:48.476 TRACE 12292 --- [http-nio-8080-exec-6] o.s.w.s.v.InternalResourceViewResolver   : View with key [adminUsers] served from cache
+2019-06-02 17:16:48.476 TRACE 12292 --- [http-nio-8080-exec-6] o.s.w.s.DispatcherServlet                : Rendering view [org.springframework.web.servlet.view.InternalResourceView: name 'adminUsers'; URL [/WEB-INF/pages/adminUsers.jsp]] 
+2019-06-02 17:16:48.476 DEBUG 12292 --- [http-nio-8080-exec-6] o.s.w.s.v.InternalResourceView           : View name 'adminUsers', model {}
+2019-06-02 17:16:48.477 DEBUG 12292 --- [http-nio-8080-exec-6] o.s.w.s.v.InternalResourceView           : Forwarding to [/WEB-INF/pages/adminUsers.jsp]
+2019-06-02 17:16:48.479 DEBUG 12292 --- [http-nio-8080-exec-6] o.s.w.s.DispatcherServlet                : Completed 200 OK, headers={masked}
+2019-06-02 17:16:49.200 TRACE 12292 --- [http-nio-8080-exec-5] o.s.w.s.DispatcherServlet                : GET "/user/logInRedirect", parameters={}, headers={masked} in DispatcherServlet 'dispatcherServlet'
+2019-06-02 17:16:49.202 TRACE 12292 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String roboticHand.Controllers.UserController.logInRedirect()
+2019-06-02 17:16:49.203 TRACE 12292 --- [http-nio-8080-exec-5] .w.s.m.m.a.ServletInvocableHandlerMethod : Arguments: []
+2019-06-02 17:16:49.203 TRACE 12292 --- [http-nio-8080-exec-5] o.s.w.s.v.InternalResourceViewResolver   : View with key [index] served from cache
+2019-06-02 17:16:49.203 TRACE 12292 --- [http-nio-8080-exec-5] o.s.w.s.DispatcherServlet                : Rendering view [org.springframework.web.servlet.view.InternalResourceView: name 'index'; URL [/WEB-INF/pages/index.jsp]] 
+2019-06-02 17:16:49.204 DEBUG 12292 --- [http-nio-8080-exec-5] o.s.w.s.v.InternalResourceView           : View name 'index', model {}
+2019-06-02 17:16:49.204 DEBUG 12292 --- [http-nio-8080-exec-5] o.s.w.s.v.InternalResourceView           : Forwarding to [/WEB-INF/pages/index.jsp]
+2019-06-02 17:16:49.205 DEBUG 12292 --- [http-nio-8080-exec-5] o.s.w.s.DispatcherServlet                : Completed 200 OK, headers={}

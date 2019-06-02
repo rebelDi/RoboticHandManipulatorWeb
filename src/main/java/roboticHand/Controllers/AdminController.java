@@ -56,7 +56,6 @@ public class AdminController {
     @PostMapping(value = "/userRightsEdit")
     public String changeUserRights(@RequestParam String user, HttpServletRequest request){
         JsonObject jsonObject = new Gson().fromJson(user, JsonObject.class);
-
         User user1 = new User();
         user1.setLogin(jsonObject.get("login").getAsString());
         user1.setRights(jsonObject.get("rights").getAsString().charAt(0));

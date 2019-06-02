@@ -50,6 +50,8 @@
         <p class="warningMessage">You have not got your permission to use imitator yet!
         If you have any further questions, please, refer to administrator.</p>
     <%}else{%>
+    <label id="Label1">IP-Address: </label> <input id="ip" type="text" style="width: 85px" value="192.168.0.123" />
+    <div style="height: 10px"></div>
     <button onclick="checkConnection()" class="ilButton buttonLaunch" style="background-color: lightpink" >Check Connection</button>
     <br>
     <div style="visibility: hidden" id="response" class="responseConnection"></div>
