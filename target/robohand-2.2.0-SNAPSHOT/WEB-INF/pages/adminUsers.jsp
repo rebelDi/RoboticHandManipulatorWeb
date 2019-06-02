@@ -40,7 +40,6 @@
         <li class="ilBar"><a href="/user/logInRedirect" class="ilButton">Exit</a></li>
     </ul>
     <hr />
-
     <table>
         <tr>
             <td>

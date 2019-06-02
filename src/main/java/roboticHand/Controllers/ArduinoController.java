@@ -22,14 +22,19 @@ public class ArduinoController {
     /*
     This method sends data to Arduino
      */
-    public String sendData(String dataQuery){
+    public String sendData(String dataQuery, String ipAddress){
         try{
             byte[] b = dataQuery.getBytes();
             byte[] receiveData = new byte[1024];
 
             //Determines the IP address of the server on Arduino
 //            InetAddress ip = InetAddress.getByName("172.20.10.3");
-            InetAddress ip = InetAddress.getByName("192.168.0.123");
+
+            if(ipAddress.equals("")){
+                ipAddress = "192.168.0.123";
+            }
+
+            InetAddress ip = InetAddress.getByName(ipAddress);
 
             //Creates a datagram based on the data of request
             DatagramSocket datagram = new DatagramSocket();
@@ -160,4 +165,6 @@ public class ArduinoController {
         }
         return true;
     }
+
+
 }

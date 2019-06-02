@@ -108,7 +108,7 @@ public class ActionServiceImpl implements ActionRepository {
     This method sends data to the Arduino
      */
     @Override
-    public void sendData(String[] actions, String[] values, HttpServletRequest request) {
+    public void sendData(String[] actions, String[] values, HttpServletRequest request, String ip) {
         String actionsJson = (String) request.getSession().getAttribute("actions");
         Gson gson = new Gson();
         ArrayList<Action> action = gson.fromJson(actionsJson, new TypeToken<List<Action>>() {}.getType());
@@ -132,7 +132,7 @@ public class ActionServiceImpl implements ActionRepository {
             gson = new GsonBuilder().create();
             for (int i = 0; i < vals.length; i++) {
                 String sendData = gson.toJson(new ArduinoData(arduinoActions[i], vals[i]));
-                arduinoController.sendData(sendData);
+                arduinoController.sendData(sendData, ip);
                 try {
                     Thread.sleep(50);
                 } catch (InterruptedException e) {

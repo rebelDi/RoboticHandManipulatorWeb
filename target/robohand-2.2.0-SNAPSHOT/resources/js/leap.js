@@ -94,12 +94,19 @@ Leap.loop(controllerOptions, function(frame) {
         }
     }
 
+    var ipAddress;
+    if(document.getElementById("ip").value !== undefined && document.getElementById("ip").value !== ""){
+        ipAddress = document.getElementById("ip").value;
+    }else {
+        ipAddress = "no";
+    }
+
     if(iteration % 100 === 0) {
         if(dataActions.length !== 0 && dataValue.length !== 0) {
             $.ajax({
                 type: "POST",
                 url: "/action/sendData",
-                data: {queryData : JSON.stringify({actions: dataActions, values: dataValue})},
+                data: {queryData : JSON.stringify({actions: dataActions, values: dataValue}), ip : ipAddress},
                 cache: false
             })
         }

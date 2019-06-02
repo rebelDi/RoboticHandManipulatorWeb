@@ -9,7 +9,7 @@ import java.util.ArrayList;
 @Repository
 public interface ActionRepository {
     void getAllActions(HttpServletRequest request);
-    void sendData(String[] actions, String[] values, HttpServletRequest request);
+    void sendData(String[] actions, String[] values, HttpServletRequest request, String ip);
     void edit(ArrayList<Action> actionsToEdit);
     Action getActionByName(String name);
 }
