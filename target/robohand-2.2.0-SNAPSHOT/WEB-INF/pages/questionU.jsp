@@ -90,7 +90,7 @@
                     </tr>
                     <br />
                     <tr style="text-align: center; background-color: white">
-                        <textarea id="question" style="width: 460px; height: 55px" value="" readonly></textarea>
+                        <textarea id="question" cols="40" rows="20" value="" readonly></textarea>
                     </tr>
                 </table>
             </tr>
@@ -101,7 +101,7 @@
                     </tr>
                     <br />
                     <tr style="text-align: center; background-color: white">
-                        <textarea id="answer" name="answer" style="width: 460px; height: 55px" value="" readonly></textarea>
+                        <textarea id="answer" name="answer" cols="40" rows="20" value="" readonly></textarea>
                         <br/>
                     </tr>
                 </table>
@@ -116,7 +116,7 @@
                 <br />
                 <tr style="text-align: center; background-color: white">
                     <form method="post" action="/question/ask">
-                        <textarea id="newQuestion" name="newQuestion" style="width: 460px; height: 55px" value=""></textarea>
+                        <textarea id="newQuestion" name="newQuestion" cols="40" rows="20" value=""></textarea>
                         <br/>
                         <input name="action" type="submit" value="Ask" class="ilButton">
                     </form>
